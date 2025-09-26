@@ -16,8 +16,8 @@ const sora = Sora({
 });
 
 export const metadata = {
-  title: "Travlia",
-  description: "Best travel agency website",
+  title: "Patagonia ",
+  description: "Best travel agency in turkey",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

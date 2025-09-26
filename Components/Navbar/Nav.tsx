@@ -27,39 +27,38 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${barlow.variable} font-barlow w-full fixed top-0 left-0 bg-white backdrop-blur-md shadow-sm z-50`}
+      className={`${barlow.variable} font-barlow w-full fixed top-[30px] left-0 bg-white backdrop-blur-md shadow-sm z-40`}
     >
-<div className="max-w-[1400px] mx-auto flex justify-between items-center px-4 py-5">
+      <div className="max-w-[1420px] mx-auto flex justify-between items-center px-4 py-5">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/images/logo.png"
               alt="Logo"
-              width={210}
-              height={60}
+              width={220}
+              height={80}
               priority
             />
           </Link>
         </div>
-{/* Nav items centrés */}
-<ul className="hidden md:flex gap-5 font-medium text-black flex-1 justify-center text-[21px]">
-  {navLinks.map((link, idx) => (
-    <li
-      key={idx}
-      className="hover:text-yellow-300 transition-colors px-2 py-2"
-    >
-      <Link href={link.href} className="font-medium">
-        {link.name}
-      </Link>
-    </li>
-  ))}
-</ul>
 
-
+        {/* Nav items centrés */}
+        <ul className="hidden md:flex gap-5 font-medium text-black flex-1 justify-center text-[21px]">
+          {navLinks.map((link, idx) => (
+            <li
+              key={idx}
+              className="hover:text-yellow-300 transition-colors px-2 py-2"
+            >
+              <Link href={link.href} className="font-medium">
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
         {/* Section droite */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-5">
           {/* Icônes agrandies */}
           <div className="flex gap-4">
             <button
@@ -70,32 +69,33 @@ export default function Navbar() {
             </button>
             <button
               aria-label="Contact by email"
-              className="p-4 rounded-full bg-[#eaeaea] hover:bg-gray-300 transition"
+              className="p-4 rounded-full bg-[#26263e] hover:bg-gray-300 transition"
             >
-              <Mail className="w-5 h-5 text-black" />
+              <Mail className="w-5 h-5 text-white" />
             </button>
           </div>
 
-{/* Let’s Build + Email + EXPLORE TRIP */}
-<div className="flex items-center gap-6">
-  <div className="text-left">
-    <p className="font-bold text-lg text-black leading-snug">Let’s Build!</p>
-    <a
-      href="mailto:infor@company.com"
-      className="text-base font-medium text-black hover:text-yellow-500 transition -mt-1 block"
-    >
-      infor@company.com
-    </a>
-  </div>
+          {/* Let’s Build + Email + EXPLORE TRIP */}
+          <div className="flex items-center gap-6">
+            <div className="text-left">
+              <p className="font-bold text-lg text-black leading-snug">
+                Let’s Build!
+              </p>
+              <a
+                href="mailto:infor@company.com"
+                className="text-base font-medium text-black hover:text-yellow-500 transition -mt-1 block"
+              >
+                info@Patagonia.com
+              </a>
+            </div>
 
-  <Link
-    href="#"
-    className="px-4 py-3 bg-black text-white font-bold rounded-md shadow hover:bg-yellow-500 hover:text-black transition w-36 text-center"
-  >
-    EXPLORE TRIP
-  </Link>
-</div>
-
+            <Link
+              href="#"
+              className="px-4 py-3 bg-black text-white font-bold rounded-md shadow hover:bg-yellow-500 hover:text-black transition w-36 text-center"
+            >
+              EXPLORE TRIP
+            </Link>
+          </div>
 
           {/* Bouton jaune */}
           <button
@@ -112,7 +112,11 @@ export default function Navbar() {
           className="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-[#fad71b] text-black shadow z-50"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={24} className="text-black" /> : <Menu size={24} className="text-black" />}
+          {isOpen ? (
+            <X size={24} className="text-black" />
+          ) : (
+            <Menu size={24} className="text-black" />
+          )}
         </button>
       </div>
 

@@ -20,6 +20,15 @@
 }
 :root {
   --font-barlow: 'Barlow Condensed', sans-serif;
+  --font-hand: 'Just Another Hand', cursive;
+}
+
+.font-barlow {
+  font-family: var(--font-barlow);
+}
+
+.font-hand {
+  font-family: var(--font-hand);
 }
 
 .font-barlow {
