@@ -22,7 +22,7 @@ export default function TopBar() {
         {/* ➤ Gauche */}
 <div className="flex flex-row flex-wrap items-center gap-4 text-center md:text-left justify-center md:justify-start">
   <span className="flex items-center gap-2">
-    <MapPin size={16} /> Newista evleri B blok, Daire 16, Esenyurt Istanbul
+    <MapPin size={16} />Daire 16, Esenyurt Istanbul
   </span>
   <span className="flex items-center gap-2">
     <Phone size={16} /> +90 538 507 39 47

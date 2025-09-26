@@ -25,8 +25,8 @@ const hand = Just_Another_Hand({
 export default function HeroSlider() {
   const slides = [
     { id: 1, img: "/images/slide.avif" },
-    { id: 2, img: "/images/slider2.jpg" },
-    { id: 3, img: "/images/slider3.jpg" },
+    { id: 2, img: "/images/Slide2.jpg" },
+    { id: 3, img: "/images/slide3.jpg" },
   ];
 
   return (
