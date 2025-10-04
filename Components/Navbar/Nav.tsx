@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${barlow.variable} font-barlow w-full fixed top-[30px] left-0 bg-white backdrop-blur-md shadow-sm z-40`}
+      className={`${barlow.variable} font-barlow w-full bg-white backdrop-blur-md shadow-sm z-40`}
     >
       <div className="max-w-[1420px] mx-auto flex justify-between items-center px-4 py-5">
         {/* Logo */}
@@ -59,7 +59,7 @@ export default function Navbar() {
 
         {/* Section droite */}
         <div className="hidden md:flex items-center gap-5">
-          {/* Icônes agrandies */}
+          {/* Icônes */}
           <div className="flex gap-4">
             <button
               aria-label="Search"
@@ -75,7 +75,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Let’s Build + Email + EXPLORE TRIP */}
+          {/* Infos + Bouton */}
           <div className="flex items-center gap-6">
             <div className="text-left">
               <p className="font-bold text-lg text-black leading-snug">

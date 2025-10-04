@@ -17,18 +17,17 @@ export default function TopBar() {
   const [openLang, setOpenLang] = useState(false);
 
   return (
-    <div className="bg-[#26263e] text-white text-[13px] md:text-[14px] fixed top-0 left-0 w-full z-50">
+    <div className="bg-[#26263e] text-white text-[13px] md:text-[14px] w-full z-50">
       <div className="max-w-[1400px] mx-auto flex justify-center md:justify-between items-center px-4 py-1.5">
         {/* ➤ Gauche */}
-<div className="flex flex-row flex-wrap items-center gap-4 text-center md:text-left justify-center md:justify-start">
-  <span className="flex items-center gap-2">
-    <MapPin size={16} />Daire 16, Esenyurt Istanbul
-  </span>
-  <span className="flex items-center gap-2">
-    <Phone size={16} /> +90 538 507 39 47
-  </span>
-</div>
-
+        <div className="flex flex-row flex-wrap items-center gap-4 text-center md:text-left justify-center md:justify-start">
+          <span className="flex items-center gap-2">
+            <MapPin size={16} />Daire 16, Esenyurt Istanbul
+          </span>
+          <span className="flex items-center gap-2">
+            <Phone size={16} /> +90 538 507 39 47
+          </span>
+        </div>
 
         {/* ➤ Droite */}
         <div className="hidden md:flex items-center gap-5">

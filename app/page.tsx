@@ -1,6 +1,7 @@
 import HeroSlider from "@/Components/Hero/Hero";
 import Nav from "@/Components/Navbar/Nav";
 import TopBar from "@/Components/TopBar/TopBar";
+import TopDestinations from "@/Components/TopDestinations/TopDestinations";
 import Image from "next/image";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
  <TopBar/>
   <Nav/>
   <HeroSlider/>
+  <TopDestinations/>
  </>
   );
 }
