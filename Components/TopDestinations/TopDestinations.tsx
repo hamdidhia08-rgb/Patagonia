@@ -91,28 +91,27 @@ export default function TopDestinations() {
             }}
           >
             {destinations.map((dest, index) => (
-              <SwiperSlide key={index}>
-                <div className="flex flex-col items-center text-center mt-10">
-                  <div className="relative w-40 h-40 md:w-50 md:h-50 rounded-full overflow-hidden mb-4 shadow-lg group">
-                    <Image
-                      src={dest.image}
-                      alt={dest.name}
-                      width={350}
-                      height={350}
-                      className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/20"></div>
-                  </div>
-                  <h3
-                    className={`${barlow.className} font-semibold text-lg md:text-xl text-gray-900`}
-                  >
-                    {dest.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm md:text-base font-medium">
-                    {dest.tours} Tours
-                  </p>
-                </div>
-              </SwiperSlide>
+<SwiperSlide key={index}>
+  <div className="flex flex-col items-center text-center mt-10">
+    <div className="relative w-full max-w-[160px] sm:max-w-[160px] md:max-w-[200px] aspect-square rounded-full overflow-hidden mb-4 shadow-lg group">
+      <Image
+        src={dest.image}
+        alt={dest.name}
+        fill
+        className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/20"></div>
+    </div>
+    <h3 className={`${barlow.className} font-semibold text-lg md:text-xl text-gray-900`}>
+      {dest.name}
+    </h3>
+    <p className="text-gray-600 text-sm md:text-base font-medium">
+      {dest.tours} Tours
+    </p>
+  </div>
+</SwiperSlide>
+
+
             ))}
           </Swiper>
 
