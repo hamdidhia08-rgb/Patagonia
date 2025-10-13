@@ -119,9 +119,9 @@ export default function TopDestinations() {
 <button
   aria-label="Previous slide"
   title="Previous slide"
-  className="custom-prev absolute -left-15 top-1/2 -translate-y-1/2 z-90 
+  className="custom-prev hidden md:flex absolute -left-15 top-1/2 -translate-y-1/2 z-90 
             bg-gray-200 text-gray-700 rounded-full shadow-sm 
-            w-9 h-9 flex items-center justify-center 
+            w-9 h-9 items-center justify-center 
             hover:bg-gray-300 hover:shadow-md 
             transition-all duration-200"
 >
@@ -131,14 +131,15 @@ export default function TopDestinations() {
 <button
   aria-label="Next slide"
   title="Next slide"
-  className="custom-next absolute -right-15 top-1/2 -translate-y-1/2 z-60 
+  className="custom-next hidden md:flex absolute -right-15 top-1/2 -translate-y-1/2 z-60 
             bg-gray-200 text-gray-700 rounded-full shadow-sm 
-            w-9 h-9 flex items-center justify-center 
+            w-9 h-9 items-center justify-center 
             hover:bg-gray-300 hover:shadow-md 
             transition-all duration-200"
 >
   <ChevronRight className="w-5 h-5" />
 </button>
+
 
         </div>
       </div>
