@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Search, Mail } from "lucide-react";
 import { Barlow_Condensed } from "next/font/google";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Font Barlow Condensed
 const barlow = Barlow_Condensed({
@@ -26,22 +27,34 @@ export default function Navbar() {
   ];
 
   return (
-    <nav
-      className={`${barlow.variable} font-barlow w-full bg-white backdrop-blur-md shadow-sm z-40`}
-    >
-      <div className="max-w-[1420px] mx-auto flex justify-between items-center px-4 py-5">
+<nav className={`${barlow.variable} font-barlow w-full bg-white shadow-sm relative z-30`}>
+  <div className="max-w-[1420px] mx-auto flex justify-between items-center px-4 py-5">
         {/* Logo */}
-        <div className="flex-shrink-0">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/logo.png"
-              alt="Logo"
-              width={220}
-              height={80}
-              priority
-            />
-          </Link>
-        </div>
+     <div className="flex-shrink-0 relative bottom-1">
+  <Link href="/" className="flex items-center">
+    <div className="md:block hidden">
+      {/* Desktop logo */}
+      <Image
+        src="/images/logoi.png"
+        alt="Logo"
+        width={180}
+        height={120}
+        priority
+      />
+    </div>
+    <div className="md:hidden block">
+      {/* Mobile logo réduit */}
+      <Image
+        src="/images/logoi.png"
+        alt="Logo"
+        width={120}
+        height={80}
+        priority
+      />
+    </div>
+  </Link>
+</div>
+
 
         {/* Nav items centrés */}
         <ul className="hidden md:flex gap-5 font-medium text-black flex-1 justify-center text-[21px]">
@@ -59,7 +72,6 @@ export default function Navbar() {
 
         {/* Section droite */}
         <div className="hidden md:flex items-center gap-5">
-          {/* Icônes */}
           <div className="flex gap-4">
             <button
               aria-label="Search"
@@ -75,14 +87,13 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Infos + Bouton */}
           <div className="flex items-center gap-6">
             <div className="text-left">
               <p className="font-bold text-lg text-black leading-snug">
                 Let’s Build!
               </p>
               <a
-                href="mailto:infor@company.com"
+                href="mailto:info@Patagonia.com"
                 className="text-base font-medium text-black hover:text-yellow-500 transition -mt-1 block"
               >
                 info@Patagonia.com
@@ -97,7 +108,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Bouton jaune */}
           <button
             aria-label="Other action"
             className="hidden md:flex p-3 rounded-full bg-[#fad71b] hover:bg-gray-300 transition ml-2"
@@ -106,44 +116,94 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          className="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-[#fad71b] text-black shadow z-50"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? (
-            <X size={24} className="text-black" />
-          ) : (
-            <Menu size={24} className="text-black" />
-          )}
-        </button>
+       {/* Mobile Buttons */}
+<div className="flex md:hidden items-center gap-3">
+  {/* Search Button */}
+  <button
+    aria-label="Search"
+    className="p-3 rounded-full  w-12 h-12 bg-[#eaeaea] hover:bg-gray-300 transition"
+  >
+    <Search className="w-5 h-5 text-black" />
+  </button>
+
+  {/* Menu Button */}
+  <button
+    aria-label={isOpen ? "Close menu" : "Open menu"}
+    className="flex items-center justify-center w-12 h-12 rounded-full bg-[#fad71b] text-black shadow"
+    onClick={() => setIsOpen(!isOpen)}
+  >
+    {isOpen ? <X size={24} /> : <Menu size={24} />}
+  </button>
+</div>
+
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg px-4 py-4 animate-slide-down">
-          <ul className="flex flex-col gap-4 font-semibold text-black">
-            {navLinks.map((link, idx) => (
-              <li key={idx}>
-                <Link
-                  href={link.href}
-                  className="hover:text-yellow-500 transition-colors py-2"
+      {/* Drawer mobile */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Fond semi-transparent */}
+         {/* Drawer et fond flou doivent être en dehors du <nav> */}
+  <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Fond flou */}
+            <motion.div
+              className="fixed inset-0 backdrop-blur-sm bg-white/20 z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+            />
+
+          {/* Drawer blanc */}
+      <motion.div
+        className="fixed top-0 right-0 h-full w-3/4 sm:w-1/2 bg-white shadow-2xl z-50 p-6 flex flex-col"
+        initial={{ x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ type: "tween", duration: 0.3 }}
+      >
+
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold text-black">Menu</h2>
+                <button
+                  aria-label="Close menu"
                   onClick={() => setIsOpen(false)}
+                  className="p-2 rounded-full bg-[#fad71b] hover:bg-yellow-500 transition"
                 >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Link
-            href="#"
-            className="mt-4 inline-block w-full text-center px-4 py-3 bg-black text-white font-bold rounded-md shadow hover:bg-yellow-500 hover:text-black transition"
-          >
-            EXPLORE TRIP
-          </Link>
-        </div>
-      )}
+                  <X className="text-black" />
+                </button>
+              </div>
+
+              <ul className="flex flex-col gap-4 font-semibold text-black text-lg">
+                {navLinks.map((link, idx) => (
+                  <li key={idx}>
+                    <Link
+                      href={link.href}
+                      className="hover:text-yellow-500 transition-colors py-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="#"
+                className="mt-auto inline-block w-full text-center px-4 py-3 bg-black text-white font-bold rounded-md shadow-lg hover:bg-yellow-500 hover:text-black transition"
+              >
+                EXPLORE TRIP
+              </Link>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
