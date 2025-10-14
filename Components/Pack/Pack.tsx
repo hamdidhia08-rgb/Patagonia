@@ -74,18 +74,44 @@ const recommendationsData: Recommendation[] = [
     ratingText: 'Excellent',
     pricePerNight: '180.00',
   },
-    {
-    id: 4,
-    type: 'Hotel',
-    title: 'Bodrum Paradise Hotel',
-    location: 'Bodrum',
-    imageSrc: '/images/image2.jpg',
-    avatarSrc: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=48',
-    rating: 4.8,
-    reviewsCount: 3,
-    ratingText: 'Excellent',
-    pricePerNight: '180.00',
-  },
+  {
+  id: 4,
+  type: 'Hotel',
+  title: 'Antalya Beach Resort',
+  location: 'Antalya',
+  imageSrc: '/images/830008420-1740-1740-w.jpg',
+  avatarSrc: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=48',
+  rating: 4.7,
+  reviewsCount: 5,
+  ratingText: 'Très Bien',
+  pricePerNight: '220.00',
+},
+{
+  id: 5,
+  type: 'Hotel',
+  title: 'Izmir Sea View Hotel',
+  location: 'Izmir',
+  imageSrc: '/images/MTY5MDM3MzA4ODUzMg.jpg',
+  avatarSrc: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=48',
+  rating: 4.6,
+  reviewsCount: 4,
+  ratingText: 'Très Bien',
+  pricePerNight: '190.00',
+},
+{
+  id: 6,
+  type: 'Hotel',
+  title: 'Pamukkale Thermal Hotel',
+  location: 'Pamukkale',
+  imageSrc: '/images/605501047.jpg',
+  avatarSrc: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=48',
+  rating: 4.9,
+  reviewsCount: 6,
+  ratingText: 'Exceptionnel',
+  pricePerNight: '210.00',
+},
+
+
 ];
 
 
@@ -145,7 +171,9 @@ const RecommendationCard: React.FC<{ data: Recommendation }> = ({ data }) => {
 
       <div className="p-4 pt-6">
         {/* Sous-titre */}
-        <p className={`${hand.className} text-sm md:text-base font-medium text-[#f1a435] mb-1`}>Top Choice</p>
+<p className={`${hand.className} text-lg md:text-xl font-medium text-[#f1a435] mb-1`}>
+  Top Choice
+</p>
         {/* Titre */}
         <h3 className={`text-lg md:text-xl font-semibold text-gray-800 mb-1 ${barlow.className}`}>
           {title} - Experience the best stay in town!
@@ -166,7 +194,11 @@ const RecommendationCard: React.FC<{ data: Recommendation }> = ({ data }) => {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          className={`h-4 w-4 ${i < Math.round(rating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300 fill-gray-300'}`}
+          className={`h-4 w-4 ${
+            i < Math.round(rating)
+              ? "text-yellow-400 fill-yellow-400"
+              : "text-gray-300 fill-gray-300"
+          }`}
         />
       ))}
     </div>
@@ -175,16 +207,16 @@ const RecommendationCard: React.FC<{ data: Recommendation }> = ({ data }) => {
       <span>({reviewsCount} reviews)</span>
     </div>
   </div>
-  {/* Prix */}
-  <div className="text-right">
-    <span className="text-sm text-gray-500">From:</span>
-    <p className="text-lg font-bold text-gray-800">
-      <span className="text-sm font-medium text-gray-600">€</span>
-      {pricePerNight}
-      <span className="text-sm font-normal text-gray-500">/night</span>
-    </p>
+
+  {/* --- Nouveau style pour le prix --- */}
+  <div className="bg-[#f99304] text-white px-4 py-2 rounded-lg shadow-md flex items-center justify-center">
+    <span className="text-base font-bold tracking-wide">
+      €{pricePerNight}
+    </span>
   </div>
 </div>
+
+
 
       </div>
     </div>

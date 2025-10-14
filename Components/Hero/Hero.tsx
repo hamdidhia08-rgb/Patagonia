@@ -26,7 +26,7 @@ export default function HeroSlider() {
     {
       id: 1,
       desktopImg: "/images/Slide.jpg",
-      mobileImg: "/images/mobile-slide1.jpg",
+      mobileImg: "/images/Slide.jpg",
     },
     {
       id: 2,
