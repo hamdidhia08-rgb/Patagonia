@@ -22,8 +22,8 @@ const WhatsappButtons: React.FC = () => {
   };
 
   const openWhatsapp = () => {
-    const phone = "+905377671027";
-    const message = encodeURIComponent("Bonjour !");
+    const phone = "+905385073947";
+    const message = encodeURIComponent("Hello !");
     const url = `https://wa.me/${phone}?text=${message}`;
     window.open(url, "_blank");
   };
