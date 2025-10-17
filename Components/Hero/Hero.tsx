@@ -28,11 +28,6 @@ export default function HeroSlider() {
       desktopImg: "/images/Slide.jpg",
       mobileImg: "/images/Slide.jpg",
     },
-    {
-      id: 2,
-      desktopImg: "/images/istanbul-4785964_1920 (1).jpg",
-      mobileImg: "/images/pexels-abdullahalmallah-6825002.jpg",
-    },
   ];
 
   return (
