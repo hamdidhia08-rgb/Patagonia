@@ -21,20 +21,19 @@ const WhatsappButtons: React.FC = () => {
   };
 
   return (
-    <>
-      {/* Bouton WhatsApp avec image */}
-      <button
-        onClick={openWhatsapp}
-        aria-label="Contact via WhatsApp"
-        className="fixed bottom-28 right-8 z-250 bg-[#25D366] p-3 rounded-full shadow-xl hover:bg-[#1ebe5b] transition-all duration-300 flex items-center justify-center"
-      >
-        <img
-          src="/images/Watsupp_icon.png" 
-          alt="WhatsApp"
-          className="w-9 h-9"
-        />
-      </button>
-    </>
+    <button
+      onClick={openWhatsapp}
+      aria-label="Contact via WhatsApp"
+      className={`fixed bottom-28 right-8 z-[250] bg-[#25D366] p-3 rounded-full shadow-xl hover:bg-[#1ebe5b] transition-all duration-500 flex items-center justify-center
+        ${showScroll ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5 pointer-events-none"}
+      `}
+    >
+      <img
+        src="/images/Watsupp_icon.png"
+        alt="WhatsApp"
+        className="w-9 h-9"
+      />
+    </button>
   );
 };
 
