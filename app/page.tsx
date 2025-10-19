@@ -1,7 +1,9 @@
+import About from "@/Components/About/About";
 import BlogLayout from "@/Components/Blog/Blog";
 import ImageGallerySlider from "@/Components/Galerie/Galerie";
 import HeroSlider from "@/Components/Hero/Hero";
 import Nav from "@/Components/Navbar/Nav";
+import NewsletterSection from "@/Components/NewsletterSection/NewsletterSection";
 import RecommendedSection from "@/Components/Pack/Pack";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
 import TopBar from "@/Components/TopBar/TopBar";
@@ -16,8 +18,11 @@ export default function Home() {
   <Nav/>
   <HeroSlider/>
   <TopDestinations/>
+
   <RecommendedSection/>
+  <NewsletterSection/>
   <ImageGallerySlider/>
+    <About/>
    <div className="py-12">
       <BlogLayout />
     </div>
