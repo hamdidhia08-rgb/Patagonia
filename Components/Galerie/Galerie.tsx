@@ -36,8 +36,8 @@ interface ImageGallerySliderProps {
 
 // --- Données ---
 const initialImages: GalleryImage[] = [
-  { id: 1, url: "/images/pexels-abdullahalmallah-6825002 - Copie.jpg", alt: "Femme marchant sur une jetée" },
-  { id: 2, url: "/images/slider/pexels-yanastyazh-2156475522-34244793.jpg", alt: "Bateau de croisière en Grèce" },
+  { id: 1, url: "/images/slider/pexels-yanastyazh-2156475522-34244793.jpg", alt: "Femme marchant sur une jetée" },
+  { id: 2, url: "/images/830008420-1740-1740-w.jpg", alt: "Bateau de croisière en Grèce" },
   { id: 3, url: "/images/slider/pexels-yunusemresahinoglu-7524272.jpg", alt: "Bungalow sur l'eau" },
   { id: 4, url: "/images/slider/pexels-ozgomz-7529416 (1).jpg", alt: "Statue de la Liberté avec skyline" },
   { id: 5, url: "/images/slider/pexels-suat-inan-672106106-32678933.jpg", alt: "Randonneurs en montagne" },
@@ -87,13 +87,13 @@ const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initia
           }}
         >
           {images.map((image) => (
-            <SwiperSlide
+          <SwiperSlide
               key={image.id}
-              className="w-[70%] sm:w-[55%] md:w-[35%] lg:w-[28%] transition-all duration-500"
+              className="w-[60%] sm:w-[45%] md:w-[33%] lg:w-[28%] transition-all duration-500"
             >
               <div
                 onClick={() => setSelectedImage(image)}
-                className="relative w-full h-52 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl group cursor-pointer transition-all duration-500"
+                className="relative w-full h-56 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl group cursor-pointer transition-all duration-500"
               >
                 <Image
                   src={image.url}
@@ -104,6 +104,7 @@ const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initia
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
               </div>
             </SwiperSlide>
+
           ))}
         </Swiper>
       )}
