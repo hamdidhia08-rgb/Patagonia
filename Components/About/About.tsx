@@ -20,18 +20,19 @@ export default function HeroSection() {
     <section
       className={`${barlow.variable} ${hand.variable} flex flex-col lg:flex-row items-center justify-center text-center lg:text-left px-6 sm:px-12 md:px-20 lg:px-24 xl:px-32 py-20 bg-gradient-to-br from-orange-50 via-white to-orange-100`}
     >
-      {/* IMAGE GAUCHE — cachée sur mobile */}
-      <div className="relative hidden lg:flex justify-center items-center w-full lg:w-1/2">
-        <div className="relative w-[440px] h-[440px] sm:w-[480px] sm:h-[480px] md:w-[520px] md:h-[520px] lg:w-[540px] lg:h-[540px]">
-          <Image
-            src="/images/about-img.png" // ton image Photoshop
-            alt="Couple on a boat"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
-      </div>
+   {/* IMAGE GAUCHE — cachée sur mobile */}
+<div className="relative hidden lg:flex justify-center items-center w-full lg:w-1/2">
+  <div className="relative w-[400px] h-[400px] sm:w-[440px] sm:h-[440px] md:w-[480px] md:h-[480px] lg:w-[470px] lg:h-[470px]">
+    <Image
+      src="/images/about-img.png" // ton image Photoshop
+      alt="Couple on a boat"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
+</div>
+
 
       {/* TEXTE DROITE */}
       <div className="lg:w-[60%] w-full mt-10 lg:mt-0 flex flex-col items-center lg:items-start text-gray-800 lg:pl-16">
