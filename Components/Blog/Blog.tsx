@@ -38,7 +38,7 @@ const featuredPost: Post = {
   excerpt: "Planning a vacation can be overwhelming, but this post offers a step-by-step guide to help readers create a comprehensive travel itinerary. From choosing a destination to booking accommodations and activities, readers will learn how to plan a stress-free and enjoyable trip.",
   imageUrl: "/images/slide6.jpg", 
   author: "Sarah Dubois", 
-  authorImageUrl: "/images/user.jpg", 
+  authorImageUrl: "/images/user/user4.jpg", 
   commentsCount: 15, 
 };
 
@@ -50,7 +50,7 @@ const sidePosts: Post[] = [
     excerpt: "Explore the benefits of traveling alone, from the freedom to discover new places with new friends and create unforgettable memories.",
     imageUrl: "/images/cappadocia.avif",
     author: "Alex Martin", 
-    authorImageUrl: "/images/user.jpg", 
+    authorImageUrl: "/images/user/user1.png", 
     commentsCount: 8,
   },
   {
@@ -60,7 +60,7 @@ const sidePosts: Post[] = [
     excerpt: "Discover the iconic landmarks that make Europe one of the world's most popular travel destinations for every adventurer.",
     imageUrl: "/images/Fethiye.jpg",
     author: "Alex Martin",
-    authorImageUrl: "/images/user.jpg",
+    authorImageUrl: "/images/user/user2.jpg",
     commentsCount: 22,
   },
   {
@@ -70,7 +70,7 @@ const sidePosts: Post[] = [
     excerpt: "Practical advice for travelers who want to see the world without breaking the bank. Tips and tricks for affordable exploration.",
     imageUrl: "/images/pamukkale-2.jpg",
     author: "Alex Martin",
-    authorImageUrl: "/images/user.jpg",
+    authorImageUrl: "/images/user/user3.jpg",
     commentsCount: 5,
   },
   {
@@ -179,7 +179,7 @@ const BlogLayout: React.FC = () => {
     <div className="max-w-6xl mx-auto p-4 md:p-8 bg-white">
       
       {/* Titres de la section Blog */}
-      <p className={`${hand.className} text-center text-[#f1a435] text-lg md:text-3xl mb-2`}>
+      <p className={`${hand.className} text-center text-orange-500 text-lg md:text-3xl mb-2`}>
         Latest Insights
       </p>
       <h2 className={`${barlow.variable} font-barlow text-2xl md:text-4xl font-bold text-center text-gray-800 mb-8`}>

@@ -1,5 +1,6 @@
 import About from "@/Components/About/About";
 import BlogLayout from "@/Components/Blog/Blog";
+import Footer from "@/Components/Footer/Footer";
 import ImageGallerySlider from "@/Components/Galerie/Galerie";
 import HeroSlider from "@/Components/Hero/Hero";
 import Nav from "@/Components/Navbar/Nav";
@@ -29,6 +30,7 @@ export default function Home() {
    <div className="py-12">
       <BlogLayout />
     </div>
+  <Footer/>
   <WhatsappButtons/>
   <ScrollToTopButton/>
  </>

@@ -52,7 +52,7 @@ const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initia
     <div className="relative w-full py-16 px-4 bg-gradient-to-b from-gray-50 to-gray-100">
       {/* --- Titre --- */}
       <div className="text-center mb-10">
-        <p className={`${hand.className} text-[#f1a435] text-2xl md:text-3xl mb-2`}>Our Beautiful Moments</p>
+        <p className={`${hand.className} text-orange-500 text-2xl md:text-3xl mb-2`}>Our Beautiful Moments</p>
         <h2 className={`${barlow.variable} font-barlow text-2xl md:text-4xl font-bold text-gray-800`}>
           Explore Our Travel Gallery
         </h2>
