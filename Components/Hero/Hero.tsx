@@ -93,7 +93,8 @@ export default function HeroSlider() {
 
             {/* Bouton vidéo seulement desktop */}
             <div className="hidden md:block absolute bottom-[18%] right-50">
-              <button
+             <button
+                title="Play video"
                 className="relative w-20 h-20 flex items-center justify-center rounded-full border border-white/60 
                   bg-white/10 backdrop-blur-md text-white shadow-lg transition-all duration-300 
                   hover:scale-110 hover:shadow-[0_0_25px_rgba(255,255,255,0.8)] group"
@@ -102,6 +103,7 @@ export default function HeroSlider() {
                 <span className="absolute inset-0 rounded-full border border-white/40 animate-ping"></span>
                 <span className="absolute inset-0 rounded-full border border-white/20 animate-pulse"></span>
               </button>
+
             </div>
           </SwiperSlide>
         ))}

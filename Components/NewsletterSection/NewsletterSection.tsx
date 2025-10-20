@@ -7,10 +7,10 @@ interface NewsletterSectionProps {}
 
 const NewsletterSection: React.FC<NewsletterSectionProps> = () => {
   return (
-    <section
-      className="relative w-full bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: `url('images/mask_group-1.webp')` }}
-    >
+   <section
+  className="relative w-full bg-cover bg-center bg-fixed bg-[url('/images/mask_group-1.webp')]"
+>
+
       {/* Overlay semi-transparent */}
       <div className="absolute inset-0 bg-black/50"></div>
 
