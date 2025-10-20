@@ -6,6 +6,7 @@ import Nav from "@/Components/Navbar/Nav";
 import NewsletterSection from "@/Components/NewsletterSection/NewsletterSection";
 import RecommendedSection from "@/Components/Pack/Pack";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
+import Service from "@/Components/Service/Service";
 import TopBar from "@/Components/TopBar/TopBar";
 import TopDestinations from "@/Components/TopDestinations/TopDestinations";
 import WhatsappButtons from "@/Components/WhatsappButtons";
@@ -21,6 +22,7 @@ export default function Home() {
 
   <RecommendedSection/>
   <NewsletterSection/>
+  <Service/>
   <ImageGallerySlider/>
     <About/>
    <div className="py-12">
