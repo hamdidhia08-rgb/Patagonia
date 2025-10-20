@@ -10,7 +10,6 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 
-// --- Polices ---
 const barlow = Barlow_Condensed({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -23,7 +22,6 @@ const hand = Just_Another_Hand({
   variable: "--font-hand",
 });
 
-// --- Types ---
 interface GalleryImage {
   id: number;
   url: string;
@@ -34,7 +32,6 @@ interface ImageGallerySliderProps {
   images?: GalleryImage[];
 }
 
-// --- Données ---
 const initialImages: GalleryImage[] = [
   { id: 1, url: "/images/slider/pexels-yanastyazh-2156475522-34244793.jpg", alt: "Femme marchant sur une jetée" },
   { id: 2, url: "/images/830008420-1740-1740-w.jpg", alt: "Bateau de croisière en Grèce" },
@@ -53,7 +50,7 @@ const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initia
 
   return (
     <div className="relative w-full py-16 px-4 bg-gradient-to-b from-gray-50 to-gray-100">
-      {/* Titre */}
+      {/* --- Titre --- */}
       <div className="text-center mb-10">
         <p className={`${hand.className} text-[#f1a435] text-2xl md:text-3xl mb-2`}>Our Beautiful Moments</p>
         <h2 className={`${barlow.variable} font-barlow text-2xl md:text-4xl font-bold text-gray-800`}>
@@ -62,38 +59,40 @@ const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initia
         <div className="w-20 h-1 bg-[#f1a435] mx-auto mt-3 rounded-full"></div>
       </div>
 
-      {/* Swiper */}
+      {/* --- Galerie Swiper --- */}
       {mounted && (
         <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={"auto"}
-          loop={true}
+          effect="coverflow"
+          grabCursor
+          centeredSlides
+          loop
+          slidesPerView="auto"
           coverflowEffect={{
-            rotate: 10,
+            rotate: 0,
             stretch: 0,
-            depth: 150,
-            modifier: 1.5,
-            slideShadows: false,
+            depth: 200,
+            modifier: 2,
+            slideShadows: true,
           }}
-          navigation={true}
+          navigation
           modules={[EffectCoverflow, Navigation]}
-          className="mySwiper max-w-6xl mx-auto relative z-0"
+          className="mySwiper max-w-6xl mx-auto"
           breakpoints={{
-            320: { slidesPerView: 1.1, spaceBetween: 10 },
-            640: { slidesPerView: 1.3, spaceBetween: 15 },
-            1024: { slidesPerView: 2.2, spaceBetween: 25 },
+            320: { slidesPerView: 1.2, spaceBetween: 15 },
+            640: { slidesPerView: 2.2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
           }}
         >
-          {images.map((image) => (
-          <SwiperSlide
+          {images.map((image, index) => (
+            <SwiperSlide
               key={image.id}
-              className="w-[60%] sm:w-[45%] md:w-[33%] lg:w-[28%] transition-all duration-500"
+              className={`transition-all duration-500 ${
+                index === Math.floor(images.length / 2) ? "scale-110 z-20" : "scale-90 z-10"
+              }`}
             >
               <div
                 onClick={() => setSelectedImage(image)}
-                className="relative w-full h-56 sm:h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl group cursor-pointer transition-all duration-500"
+                className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl cursor-pointer transition-all duration-500"
               >
                 <Image
                   src={image.url}
@@ -101,15 +100,14 @@ const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initia
                   fill
                   className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-all duration-500"></div>
               </div>
             </SwiperSlide>
-
           ))}
         </Swiper>
       )}
 
-      {/* Pop-up */}
+      {/* --- Pop-up --- */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[100] transition-all duration-500"
