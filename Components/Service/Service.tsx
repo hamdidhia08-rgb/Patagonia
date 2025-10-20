@@ -16,43 +16,43 @@ interface TourData {
 const staticTourExamples: TourData[] = [
      {
     title: "Airport pickup service",
-    imageUrl: "/images/service/image7.webp",
+    imageUrl: "/images/Service/image7.webp",
     altText: "La Mosquée Bleue à Istanbul",
   },
  
   {
     title: "Bosphorus Cruise Experience",
-    imageUrl: "/images/service/image3.webp",
+    imageUrl: "/images/Service/image3.webp",
     altText: "Croisière sur le Bosphore à Istanbul",
   },
   {
     title: "Hagia sophia city tour",
-    imageUrl: "/images/service/image3.jpg",
+    imageUrl: "/images/Service/image3.jpg",
     altText: "Vue de l'Obélisque dans l'Hippodrome",
   },
   {
     title: "Adventure From Earth to Sky",
-    imageUrl: "/images/service/image.avif",
+    imageUrl: "/images/Service/image.avif",
     altText: "La Mosquée Bleue à Istanbul",
   },
     {
     title: "Breakfast with Flamingos",
-    imageUrl: "/images/service/image1.webp",
+    imageUrl: "/images/Service/image1.webp",
     altText: "Vue de la Mosquée Hagia Sophia",
   },
     {
     title: "Exciting skydiving adventure",
-    imageUrl: "/images/service/image8.jpg",
+    imageUrl: "/images/Service/image8.jpg",
     altText: "Vue de la Mosquée Hagia Sophia",
   },
     {
     title: "Spa & Massage",
-    imageUrl: "/images/service/image9.webp",
+    imageUrl: "/images/Service/image9.webp",
     altText: "Vue de la Mosquée Hagia Sophia",
   },
    {
     title: "Forest Horse Riding Tour",
-    imageUrl: "/images/service/image10.jpg",
+    imageUrl: "/images/Service/image10.jpg",
     altText: "Vue de la Mosquée Hagia Sophia",
   },
 ];
