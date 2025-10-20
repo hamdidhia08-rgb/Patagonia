@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         }}
       />
 
-      {/* --- Masque bleu foncé (style "océan") --- */}
+      {/* --- Masque bleu foncé --- */}
       <div className="absolute inset-0 bg-[#021E3F]/85 mix-blend-multiply"></div>
 
       {/* --- Contenu principal --- */}
@@ -58,32 +58,16 @@ const Footer: React.FC = () => {
             <li>Turkey</li>
           </ul>
           <div className="flex gap-4 mt-6">
-            <a
-              href="#"
-              className="hover:text-orange-400 transition-all"
-              aria-label="Facebook"
-            >
+            <a href="#" className="hover:text-orange-400 transition-all" aria-label="Facebook">
               <Facebook />
             </a>
-            <a
-              href="#"
-              className="hover:text-orange-400 transition-all"
-              aria-label="Twitter"
-            >
+            <a href="#" className="hover:text-orange-400 transition-all" aria-label="Twitter">
               <Twitter />
             </a>
-            <a
-              href="#"
-              className="hover:text-orange-400 transition-all"
-              aria-label="Instagram"
-            >
+            <a href="#" className="hover:text-orange-400 transition-all" aria-label="Instagram">
               <Instagram />
             </a>
-            <a
-              href="#"
-              className="hover:text-orange-400 transition-all"
-              aria-label="LinkedIn"
-            >
+            <a href="#" className="hover:text-orange-400 transition-all" aria-label="LinkedIn">
               <Linkedin />
             </a>
           </div>
@@ -107,9 +91,7 @@ const Footer: React.FC = () => {
               />
               <div>
                 <p className="text-sm text-gray-400">WhatsApp</p>
-                <p className="font-semibold text-lg text-white">
-                  +90 545 533 865
-                </p>
+                <p className="font-semibold text-lg text-white">+90 538 507 39 47</p>
               </div>
             </div>
 
@@ -124,9 +106,7 @@ const Footer: React.FC = () => {
               />
               <div>
                 <p className="text-sm text-gray-400">Mail Us</p>
-                <p className="font-semibold text-lg text-white">
-                  info@patagonia.com
-                </p>
+                <p className="font-semibold text-lg text-white">tourismpatagonia@gmail.com</p>
               </div>
             </div>
 
@@ -141,9 +121,7 @@ const Footer: React.FC = () => {
               />
               <div>
                 <p className="text-sm text-gray-400">More Inquiry</p>
-                <p className="font-semibold text-lg text-white">
-                  +90 546 453 345
-                </p>
+                <p className="font-semibold text-lg text-white">+90 538 507 39 47</p>
               </div>
             </div>
           </div>
@@ -152,9 +130,44 @@ const Footer: React.FC = () => {
 
       {/* --- Bande inférieure --- */}
       <div className="relative mt-16 bg-[#010d1e]/95 backdrop-blur-sm py-5 border-t border-white/10">
-        <p className="text-center text-gray-300 text-base tracking-wide">
-          © {new Date().getFullYear()} <span className="text-orange-400">Patagonia Tourism</span>. All rights reserved.
-        </p>
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
+          <p className="text-gray-300 text-base tracking-wide text-center md:text-left">
+            © {new Date().getFullYear()}{" "}
+            <span className="text-orange-400">Patagonia Tourism</span>. All rights reserved.
+          </p>
+
+          {/* Méthodes de paiement */}
+          <div className="flex items-center gap-4">
+            <Image
+              src="/images/pay/gpay-icon.svg"
+              alt="Visa"
+              width={50}
+              height={30}
+              className="object-contain"
+            />
+            <Image
+              src="/images/pay/mastar-card-icon.svg"
+              alt="MasterCard"
+              width={50}
+              height={30}
+              className="object-contain"
+            />
+            <Image
+              src="/images/pay/paypal-icon.svg"
+              alt="PayPal"
+              width={50}
+              height={30}
+              className="object-contain"
+            />
+            <Image
+              src="/images/pay/visa-icon.svg"
+              alt="American Express"
+              width={50}
+              height={30}
+              className="object-contain"
+            />
+          </div>
+        </div>
       </div>
     </footer>
   );
