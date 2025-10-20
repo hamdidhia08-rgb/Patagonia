@@ -45,6 +45,16 @@ const staticTourExamples: TourData[] = [
     imageUrl: "/images/service/image8.jpg",
     altText: "Vue de la Mosquée Hagia Sophia",
   },
+    {
+    title: "Spa & Massage",
+    imageUrl: "/images/service/image9.webp",
+    altText: "Vue de la Mosquée Hagia Sophia",
+  },
+   {
+    title: "Forest Horse Riding Tour",
+    imageUrl: "/images/service/image10.jpg",
+    altText: "Vue de la Mosquée Hagia Sophia",
+  },
 ];
 
 // --- Carte d’un tour ---
@@ -70,7 +80,7 @@ const TourCard: React.FC<TourData> = ({ title, imageUrl, altText }) => {
           <h3 className="mb-3 text-xl font-semibold text-white">{title}</h3>
           <Link href="/tour-details">
             <span className="cursor-pointer rounded-lg border border-white bg-transparent px-6 py-2 text-sm font-medium text-white transition duration-300 hover:bg-white hover:text-gray-800">
-              View Tour
+              View Service
             </span>
           </Link>
         </div>
@@ -85,7 +95,7 @@ const Service: React.FC = () => {
     <section className="bg-orange-50/70 py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="mb-12 text-4xl font-bold text-gray-800">
-          Upto 30% For <span className="text-orange-600">Istanbul</span>
+          Up to 30% Off on <span className="text-orange-600">Services</span>
         </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {staticTourExamples.map((tour, index) => (

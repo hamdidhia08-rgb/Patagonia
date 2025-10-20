@@ -22,9 +22,10 @@ export default function Home() {
 
   <RecommendedSection/>
   <NewsletterSection/>
+      <About/>
   <Service/>
   <ImageGallerySlider/>
-    <About/>
+
    <div className="py-12">
       <BlogLayout />
     </div>
