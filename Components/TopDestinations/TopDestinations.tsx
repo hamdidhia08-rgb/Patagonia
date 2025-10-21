@@ -42,35 +42,37 @@ export default function TopDestinations() {
     <section className="pt-5 pb-0 bg-white relative">
       <div className="max-w-7xl mx-auto px-6 mt-20 relative">
         {/* Title */}
-        <div className="relative mb-16">
-       {/* Image gauche */}
-<div className="absolute left-0 top-1/2 -translate-y-1/2 w-52 h-12 hidden md:block">
-  <Image
-    src="/images/home2-offer-banner-vector.svg"
-    alt="Left Icon"
-    width={108}
-    height={108}
-    className="animate-bounce-slow object-contain"
-  />
-</div>
+        <div className="relative mb-10 text-center">
+          {/* Image gauche */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-52 h-12 hidden md:block">
+            <Image
+              src="/images/home2-offer-banner-vector.svg"
+              alt="Left Icon"
+              width={108}
+              height={108}
+              className="animate-bounce-slow object-contain"
+            />
+          </div>
 
-{/* Image droite */}
-<div className="absolute right-0 top-1/2 -translate-y-1/2 w-28 h-28 flex items-center justify-center animate-spin-slow hidden md:flex">
-  <Image
-    src="/images/home2-package-slider-vector2.svg"
-    alt="Right Icon"
-    width={70}
-    height={70}
-    className="object-contain block"
-  />
-</div>
-
+          {/* Image droite */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-28 h-28 flex items-center justify-center animate-spin-slow hidden md:flex">
+            <Image
+              src="/images/home2-package-slider-vector2.svg"
+              alt="Right Icon"
+              width={70}
+              height={70}
+              className="object-contain block"
+            />
+          </div>
 
           <h2
-            className={`${barlow.className} text-3xl md:text-4xl font-bold text-gray-900 text-center`}
+            className={`${barlow.className} text-3xl md:text-4xl font-bold text-gray-900`}
           >
             Top destinations in Turkey
           </h2>
+          <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto mt-2">
+            Discover the most popular places to visit — from cultural landmarks to breathtaking landscapes.
+          </p>
         </div>
 
         {/* Swiper */}
@@ -81,7 +83,7 @@ export default function TopDestinations() {
               nextEl: ".custom-next",
               prevEl: ".custom-prev",
             }}
-            spaceBetween={30}
+            spaceBetween={25}
             slidesPerView={2}
             breakpoints={{
               640: { slidesPerView: 2, spaceBetween: 25 },
@@ -91,59 +93,60 @@ export default function TopDestinations() {
             }}
           >
             {destinations.map((dest, index) => (
-<SwiperSlide key={index}>
-  <div className="flex flex-col items-center text-center mt-10">
-    <div className="relative w-full max-w-[160px] sm:max-w-[160px] md:max-w-[200px] aspect-square rounded-full overflow-hidden mb-4 shadow-lg group">
-      <Image
-        src={dest.image}
-        alt={dest.name}
-        fill
-        className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
-      />
-      <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/20"></div>
-    </div>
-    <h3 className={`${barlow.className} font-semibold text-lg md:text-xl text-gray-900`}>
-      {dest.name}
-    </h3>
-    <p className="text-gray-600 text-sm md:text-base font-medium">
-      {dest.tours} Tours
-    </p>
-  </div>
-</SwiperSlide>
-
-
+              <SwiperSlide key={index}>
+                <div className="flex flex-col items-center text-center mt-10">
+                  {/* Taille cercle légèrement agrandie */}
+                  <div className="relative w-full max-w-[140px] sm:max-w-[160px] md:max-w-[180px] aspect-square rounded-full overflow-hidden mb-4 shadow-md group">
+                    <Image
+                      src={dest.image}
+                      alt={dest.name}
+                      fill
+                      className="object-cover w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/20"></div>
+                  </div>
+                  <h3
+                    className={`${barlow.className} font-semibold text-lg md:text-xl text-gray-900`}
+                  >
+                    {dest.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm md:text-base font-medium">
+                    {dest.tours} Tours
+                  </p>
+                </div>
+              </SwiperSlide>
             ))}
           </Swiper>
 
-         {/* Custom Navigation Buttons légèrement décalés à l’extérieur */}
-<button
-  aria-label="Previous slide"
-  title="Previous slide"
-  className="custom-prev hidden md:flex absolute -left-15 top-1/2 -translate-y-1/2 z-90 
-            bg-gray-200 text-gray-700 rounded-full shadow-sm 
-            w-9 h-9 items-center justify-center 
-            hover:bg-gray-300 hover:shadow-md 
-            transition-all duration-200"
->
-  <ChevronLeft className="w-5 h-5" />
-</button>
+          {/* Custom Navigation Buttons avec espace entre flèches et images */}
+          <button
+            aria-label="Previous slide"
+            title="Previous slide"
+            className="custom-prev flex absolute -left-5 top-1/2 -translate-y-1/2 z-50 
+                      bg-gray-200 text-gray-700 rounded-full shadow-sm 
+                      w-9 h-9 items-center justify-center 
+                      hover:bg-gray-300 hover:shadow-md 
+                      transition-all duration-200"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
 
-<button
-  aria-label="Next slide"
-  title="Next slide"
-  className="custom-next hidden md:flex absolute -right-15 top-1/2 -translate-y-1/2 z-60 
-            bg-gray-200 text-gray-700 rounded-full shadow-sm 
-            w-9 h-9 items-center justify-center 
-            hover:bg-gray-300 hover:shadow-md 
-            transition-all duration-200"
->
-  <ChevronRight className="w-5 h-5" />
-</button>
-
-
+          <button
+            aria-label="Next slide"
+            title="Next slide"
+            className="custom-next flex absolute -right-5 top-1/2 -translate-y-1/2 z-50 
+                      bg-gray-200 text-gray-700 rounded-full shadow-sm 
+                      w-9 h-9 items-center justify-center 
+                      hover:bg-gray-300 hover:shadow-md 
+                      transition-all duration-200"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
-      <br /><br /><br />
+      <br />
+      <br />
+      <br />
     </section>
   );
 }

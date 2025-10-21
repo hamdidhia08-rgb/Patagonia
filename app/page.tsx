@@ -20,10 +20,9 @@ export default function Home() {
   <Nav/>
   <HeroSlider/>
   <TopDestinations/>
-
   <RecommendedSection/>
   <NewsletterSection/>
-      <About/>
+  <About/>
   <Service/>
   <ImageGallerySlider/>
 
