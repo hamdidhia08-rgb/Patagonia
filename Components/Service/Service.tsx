@@ -42,7 +42,7 @@ const staticTourExamples: TourData[] = [
   },
     {
     title: "Exciting skydiving adventure",
-    imageUrl: "/images/Service/image8.jpg",
+    imageUrl: "/images/autre/tour-package-img22.jpg",
     altText: "Vue de la Mosquée Hagia Sophia",
   },
     {

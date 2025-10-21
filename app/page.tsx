@@ -3,6 +3,7 @@ import BlogLayout from "@/Components/Blog/Blog";
 import Footer from "@/Components/Footer/Footer";
 import ImageGallerySlider from "@/Components/Galerie/Galerie";
 import HeroSlider from "@/Components/Hero/Hero";
+import Hero1 from "@/Components/Hero/Hero1";
 import Nav from "@/Components/Navbar/Nav";
 import NewsletterSection from "@/Components/NewsletterSection/NewsletterSection";
 import RecommendedSection from "@/Components/Pack/Pack";

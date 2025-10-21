@@ -26,10 +26,10 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { name: "Home", href: "#" },
+    { name: "Home", href: "/" },
     { name: "About", href: "#" },
     { name: "Tours", href: "#" },
-    { name: "Pages", href: "#" },
+    { name: "Service", href: "/Service" },
     { name: "Blog", href: "#" },
     { name: "Contact", href: "#" },
   ];
@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* Nav items desktop */}
           <ul className="hidden md:flex gap-5 font-medium text-black flex-1 justify-center text-[21px]">
             {navLinks.map((link, idx) => (
-              <li key={idx} className="hover:text-yellow-300 transition-colors px-2 py-2">
+              <li key={idx} className="hover:text-orange-400 transition-colors px-2 py-2">
                 <Link href={link.href} className="font-medium">{link.name}</Link>
               </li>
             ))}

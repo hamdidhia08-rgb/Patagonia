@@ -56,6 +56,18 @@ body {
 .animate-bounce-slow {
   animation: bounce-slow 2s infinite;
 }
+@keyframes floating {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, 10px); /* vers le bas et vers la gauche */
+  }
+}
+
+.animate-floating {
+  animation: floating 3s ease-in-out infinite;
+}
 
 @keyframes slide-down {
   from {
