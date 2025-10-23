@@ -42,7 +42,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 relative bottom-1">
             <Link href="/" className="flex items-center">
               <div className="md:block hidden">
-                <Image src="/images/logoi.png" alt="Logo" width={180} height={120} priority />
+                <Image src="/images/logoi.png" alt="Logo" width={160} height={120} priority />
               </div>
               <div className="md:hidden block">
                 <Image src="/images/logoi.png" alt="Logo" width={120} height={80} priority />
@@ -80,7 +80,7 @@ export default function Navbar() {
 
               <Link href="#" className="px-4 py-3     bg-gradient-to-r from-orange-400 to-orange-600
     hover:from-orange-500 hover:to-orange-700
-    text-white font-bold rounded-md shadow hover:bg-yellow-500 hover:text-black transition w-36 text-center">
+    text-white font-bold rounded-md shadow  transition w-36 text-center">
                 EXPLORE TRIP
               </Link>
             </div>

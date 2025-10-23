@@ -26,6 +26,7 @@ export default function HeroSlider() {
     { id: 1, desktopImg: "/images/bg/125.png", mobileImg: "/images/bg/125.png" },
     { id: 2, desktopImg: "/images/bg/cruise-banner.png", mobileImg: "/images/bg/cruise-banner.png" },
     
+    
   ];
 
   return (

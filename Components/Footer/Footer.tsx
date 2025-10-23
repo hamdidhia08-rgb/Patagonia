@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
         <div>
           <h2 className="text-4xl font-extrabold leading-tight mb-4">
             Travel beyond your imagination,
-            <br /> with <span className="text-yellow-500">Patagonia </span>
+            <br /> with <span className="text-orange-400">Patagonia </span>
           </h2>
           <p className="text-gray-300 text-lg mt-3">
             Discover unforgettable journeys, curated for your comfort and adventure.
@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-6 gap-4">
           <p className="text-gray-300 text-base tracking-wide text-center md:text-left">
             © {new Date().getFullYear()}{" "}
-            <span className="text-yellow-400">Patagonia Tourism</span>. All rights reserved.
+            <span className="text-orange-400">Patagonia Tourism</span>. All rights reserved.
           </p>
 
           {/* Méthodes de paiement */}
