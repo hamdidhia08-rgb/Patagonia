@@ -78,7 +78,9 @@ export default function Navbar() {
                 </a>
               </div>
 
-              <Link href="#" className="px-4 py-3 bg-black text-white font-bold rounded-md shadow hover:bg-yellow-500 hover:text-black transition w-36 text-center">
+              <Link href="#" className="px-4 py-3     bg-gradient-to-r from-orange-400 to-orange-600
+    hover:from-orange-500 hover:to-orange-700
+    text-white font-bold rounded-md shadow hover:bg-yellow-500 hover:text-black transition w-36 text-center">
                 EXPLORE TRIP
               </Link>
             </div>

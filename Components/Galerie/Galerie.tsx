@@ -33,13 +33,13 @@ interface ImageGallerySliderProps {
 }
 
 const initialImages: GalleryImage[] = [
-  { id: 1, url: "/images/slider/pexels-yanastyazh-2156475522-34244793.jpg", alt: "Femme marchant sur une jetée" },
-  { id: 2, url: "/images/830008420-1740-1740-w.jpg", alt: "Bateau de croisière en Grèce" },
-  { id: 3, url: "/images/slider/pexels-yunusemresahinoglu-7524272.jpg", alt: "Bungalow sur l'eau" },
-  { id: 4, url: "/images/slider/pexels-ozgomz-7529416 (1).jpg", alt: "Statue de la Liberté avec skyline" },
-  { id: 5, url: "/images/slider/pexels-suat-inan-672106106-32678933.jpg", alt: "Randonneurs en montagne" },
-  { id: 6, url: "/images/slider/pexels-sinan-aslan-1844393508-34287418.jpg", alt: "Bungalow sur l'eau (bis)" },
-  { id: 7, url: "/images/cappadocia.avif", alt: "Cappadocia paysage" },
+  { id: 1, url: "/images/souvenir/img3.jpg", alt: "Femme marchant sur une jetée" },
+  { id: 2, url: "/images/souvenir/img.jpg", alt: "Bateau de croisière en Grèce" },
+  { id: 3, url: "/images/souvenir/img3.webp", alt: "Bungalow sur l'eau" },
+  { id: 4, url: "/images/souvenir/img1.webp", alt: "Statue de la Liberté avec skyline" },
+  { id: 5, url: "/images/souvenir/img.jpeg", alt: "Randonneurs en montagne" },
+  { id: 6, url: "/images/souvenir/img1.jpg", alt: "Bungalow sur l'eau (bis)" },
+  { id: 7, url: "/images/souvenir/img4.jpg", alt: "Cappadocia paysage" },
 ];
 
 const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initialImages }) => {
@@ -49,7 +49,11 @@ const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initia
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className="relative w-full py-16 px-4 bg-gradient-to-b from-gray-50 to-gray-100">
+    <div
+  className="relative w-full py-18 px-4 bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/images/bg/bg-banner.png')" }}
+>
+
       {/* --- Titre --- */}
       <div className="text-center mb-10">
         <p className={`${hand.className} text-orange-500 text-2xl md:text-3xl mb-2`}>Our Beautiful Moments</p>
@@ -90,10 +94,11 @@ const ImageGallerySlider: React.FC<ImageGallerySliderProps> = ({ images = initia
                 index === Math.floor(images.length / 2) ? "scale-110 z-20" : "scale-90 z-10"
               }`}
             >
-              <div
-                onClick={() => setSelectedImage(image)}
-                className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl cursor-pointer transition-all duration-500"
-              >
+            <div
+                  onClick={() => setSelectedImage(image)}
+                  className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[28rem] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl cursor-pointer transition-all duration-500"
+                >
+
                 <Image
                   src={image.url}
                   alt={image.alt}

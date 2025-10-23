@@ -1,4 +1,5 @@
 import About from "@/Components/About/About";
+import AboutSection from "@/Components/About/AboutSection";
 import BlogLayout from "@/Components/Blog/Blog";
 import Footer from "@/Components/Footer/Footer";
 import ImageGallerySlider from "@/Components/Galerie/Galerie";
@@ -25,6 +26,7 @@ export default function Home() {
   <NewsletterSection/>
   <About/>
   <Service/>
+  <AboutSection/>
   <ImageGallerySlider/>
 
    <div className="py-12">
