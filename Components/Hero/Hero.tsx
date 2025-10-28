@@ -25,20 +25,17 @@ export default function HeroSlider() {
   const slides = [
     { id: 1, desktopImg: "/images/bg/125.png", mobileImg: "/images/bg/125.png" },
     { id: 2, desktopImg: "/images/bg/cruise-banner.png", mobileImg: "/images/bg/cruise-banner.png" },
-    
-    
   ];
 
   return (
     <section className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
-<Swiper
-  modules={[Autoplay, Pagination]}
-  autoplay={{ delay: 5000, disableOnInteraction: false }}
-  loop
-  pagination={{ clickable: true }}
-  className="custom-swiper w-full h-full" // <-- ici on remet custom-swiper
->
-
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        loop
+        pagination={{ clickable: true }}
+        className="custom-swiper w-full h-full"
+      >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} className="relative w-full h-full">
             <Image
@@ -62,9 +59,10 @@ export default function HeroSlider() {
 
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
 
-            <div
-              className={`${barlow.variable} ${hand.variable} absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-16 lg:px-28`}
-            >
+           <div
+  className={`${barlow.variable} ${hand.variable} absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-16 lg:px-28 transform translate-y-10 md:-translate-y-5`}
+>
+
               <div className="w-full max-w-3xl flex flex-col items-center">
                 <p className="font-hand text-orange-400 text-3xl md:text-5xl leading-tight">
                   Discover Turkey
@@ -99,6 +97,18 @@ export default function HeroSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* 🌊 Image shape en bas */}
+      <div className="absolute bottom-0 w-full z-10">
+        <Image
+          src="/images/dhia.svg"
+          alt="Bottom shape"
+          width={1920}
+          height={200}
+          className="w-full object-cover"
+          priority
+        />
+      </div>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "react-big-calendar/lib/css/react-big-calendar.css";
 
 :root {
   --background: #ffffff;
@@ -101,7 +102,7 @@ body {
 }
 /* Personnalisation de la pagination Swiper */
 .custom-swiper .swiper-pagination {
-  bottom: 30px !important; /* Légèrement plus haut */
+  bottom: 60px !important; /* Légèrement plus haut */
 }
 
 .custom-swiper .swiper-pagination-bullet {
@@ -120,3 +121,5 @@ body {
   transform: scale(1.3);
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
 }
+
+
