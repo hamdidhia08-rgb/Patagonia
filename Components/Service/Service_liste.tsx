@@ -64,12 +64,12 @@ const staticTourExamples: TourData[] = [
   },
   {
     title: "Hot Air Balloon Ride",
-    imageUrl: "/images/Service/balloon.webp",
+    imageUrl: "/images/Service/image10.webp",
     altText: "Vol en montgolfière",
   },
   {
     title: "Traditional Turkish Hammam",
-    imageUrl: "/images/Service/hammam.webp",
+    imageUrl: "/images/Service/image11.webp",
     altText: "Expérience hammam turc",
   },
   {

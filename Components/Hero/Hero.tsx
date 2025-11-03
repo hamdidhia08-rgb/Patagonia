@@ -71,7 +71,7 @@ export default function HeroSlider() {
                   Explore & Experience
                 </h2>
                 <h3 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-md">
-                  Adventure Awaits
+                  <span className="text-stroke-white">Adventure Awaits</span>
                 </h3>
                 <p className="text-white text-sm md:text-base lg:text-lg leading-snug opacity-95">
                   From the bustling streets of Istanbul to the magical landscapes of Cappadocia, enjoy an unforgettable Turkish journey.

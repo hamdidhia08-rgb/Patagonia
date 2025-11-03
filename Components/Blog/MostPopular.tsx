@@ -27,7 +27,7 @@ const popularPosts: PopularPost[] = [
 
 const MostPopular: React.FC = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 border border-gray-100 mt-10">
+    <div className="w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 border border-gray-100 mt-5">
       <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
         Most Popular
       </h2>
