@@ -122,4 +122,14 @@ body {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
 }
 
+/* globals.css */
 
+@layer utilities {
+  .text-stroke-white {
+    /* Propriété standard du contour de texte */
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+    /* Rendre l'intérieur du texte transparent */
+    color: transparent;
+  }
+}
