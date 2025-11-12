@@ -7,6 +7,12 @@ import { Menu, X, Search, Mail } from "lucide-react";
 import { Barlow_Condensed } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { Inter } from "next/font/google"; 
+import { Source_Sans_3 } from "next/font/google";
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 
 const barlow = Barlow_Condensed({
@@ -57,16 +63,19 @@ export default function Navbar() {
             </Link>
           </div>
 
-      {/* Nav items desktop */}
-          <ul className="hidden md:flex gap-5 text-black flex-1 justify-center text-[17px]"
-            style={{ fontFamily: inter.style.fontFamily }}
-          >
-            {navLinks.map((link, idx) => (
-              <li key={idx} className="hover:text-orange-400 transition-colors px-2 py-2 font-semibold">
-                <Link href={link.href}>{link.name}</Link>
-              </li>
-            ))}
-          </ul>
+            {/* Nav items desktop */}
+              <ul
+                className={`hidden md:flex gap-4 text-black flex-1 justify-center text-[18px] ${sourceSans.className}`}>
+                {navLinks.map((link, idx) => (
+                  <li
+                    key={idx}
+                    className="hover:text-orange-400 transition-colors px-2 py-2 font-semibold"
+                  >
+                    <Link href={link.href}>{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
+
 
 
 
@@ -74,10 +83,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-5">
             <div className="flex gap-4">
               <button aria-label="Search" className="p-4 rounded-full bg-[#eaeaea] hover:bg-gray-300 transition">
-                <Search className="w-5 h-5 text-black" />
+                <Search className="w-4 h-4 text-black" />
               </button>
               <button aria-label="Contact by email" className="p-4 rounded-full bg-[#26263e] hover:bg-gray-300 transition">
-                <Mail className="w-5 h-5 text-white" />
+                <Mail className="w-4 h-4 text-white" />
               </button>
             </div>
 
