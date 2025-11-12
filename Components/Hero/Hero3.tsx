@@ -9,9 +9,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 function HeroImages() {
   const images = [
-    "/images/activite/image1.webp",
-    "/images/activite/image2.webp",
-    "/images/activite/image3.webp",
+    "/images/1.webp",
+    "/images/sainte-sophie-2-1-1300x867.png",
+    "/images/slide7.jpg",
     "/images/hero/img3.jpg",
     "/images/hero/img4.jpg",
   ]
