@@ -14,13 +14,11 @@ import {
 } from "lucide-react";
 import { Roboto } from "next/font/google";
 
-// --- Import et configuration de la police ---
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
-// --- Types TypeScript pour les données ---
 interface ActivityDetail {
   transport: string;
   activities: string;
@@ -36,41 +34,153 @@ interface TourDay {
   details: ActivityDetail | null;
 }
 
-// --- Données factices de l'itinéraire ---
-const itineraryData: TourDay[] = [
+interface CityItinerary {
+  city: string;
+  days: TourDay[];
+}
+
+const cityData: CityItinerary[] = [
   {
-    day: "Day-01",
-    title: "Eiffel Tower – The symbol of France",
-    description:
-      "The Eiffel Tower is the heart of Paris and offers a variety of exciting activities for visitors. As like, climb the Eiffel Tower, take the elevator to the summit, sunset & night view, picnic at champ de mars & bike tour around the Eiffel Tower.",
-    details: {
-      transport: "Car, Flight, Boat",
-      activities: "Climb the Eiffel Tower, Sunset & night view, Bike tour.",
-      meals: "Brakefast, Launch, Snacks",
-      accommodation: "Rajonikanto Hotel",
-      accommodationLink: "#",
-    },
+    city: "Istanbul",
+    days: [
+      {
+        day: "Day-01",
+        title: "Hagia Sophia & Blue Mosque",
+        description:
+          "Explore Istanbul's iconic landmarks, visiting Hagia Sophia and the Blue Mosque. Take a stroll in Sultanahmet Square.",
+        details: {
+          transport: "Walk, Tram",
+          activities: "Visit Hagia Sophia, Blue Mosque, Sultanahmet Square",
+          meals: "Breakfast, Lunch, Dinner",
+          accommodation: "Sultanahmet Hotel",
+          accommodationLink: "#",
+        },
+      },
+      {
+        day: "Day-02",
+        title: "Bosphorus Cruise & Spice Market",
+        description:
+          "Enjoy a scenic cruise along the Bosphorus and explore the colorful Spice Market.",
+        details: {
+          transport: "Boat, Walk",
+          activities: "Bosphorus cruise, Spice Market shopping",
+          meals: "Breakfast, Lunch",
+          accommodation: "Sultanahmet Hotel",
+          accommodationLink: "#",
+        },
+      },
+      {
+        day: "Day-03",
+        title: "Topkapi Palace & Grand Bazaar",
+        description:
+          "Visit Topkapi Palace, home of Ottoman sultans, and shop for souvenirs at the Grand Bazaar.",
+        details: {
+          transport: "Walk, Tram",
+          activities: "Topkapi Palace tour, Grand Bazaar shopping",
+          meals: "Breakfast, Lunch, Dinner",
+          accommodation: "Sultanahmet Hotel",
+          accommodationLink: "#",
+        },
+      },
+      {
+        day: "Day-04",
+        title: "Asian Side & Maiden's Tower",
+        description:
+          "Take a ferry to the Asian side of Istanbul and visit the iconic Maiden's Tower.",
+        details: {
+          transport: "Ferry, Walk",
+          activities: "Ferry ride, Visit Maiden's Tower, Street food tasting",
+          meals: "Breakfast, Lunch",
+          accommodation: "Sultanahmet Hotel",
+          accommodationLink: "#",
+        },
+      },
+    ],
   },
   {
-    day: "Day-02",
-    title: "Louvre Museum – Home of the Mona Lisa",
-    description:
-      "Explore the world's largest art museum and a historic monument in Paris. Marvel at masterpieces like the Mona Lisa and the Venus de Milo.",
-    details: null,
+    city: "Antalya",
+    days: [
+      {
+        day: "Day-01",
+        title: "Old Town Kaleici",
+        description:
+          "Walk through Antalya's historical old town, visiting ancient gates, narrow streets and quaint shops.",
+        details: {
+          transport: "Walk",
+          activities: "Explore Kaleici, Hadrian's Gate, Marina walk",
+          meals: "Breakfast, Lunch, Dinner",
+          accommodation: "Antalya Beach Resort",
+          accommodationLink: "#",
+        },
+      },
+      {
+        day: "Day-02",
+        title: "Duden Waterfalls & Beach Relaxation",
+        description:
+          "Visit the famous Duden Waterfalls and spend the afternoon relaxing on Antalya’s beautiful beaches.",
+        details: {
+          transport: "Car",
+          activities: "Duden Waterfalls, Beach relaxation, Swimming",
+          meals: "Breakfast, Lunch",
+          accommodation: "Antalya Beach Resort",
+          accommodationLink: "#",
+        },
+      },
+      {
+        day: "Day-03",
+        title: "Aspendos & Perge Ancient Ruins",
+        description:
+          "Explore the well-preserved Roman theater of Aspendos and visit the ancient city of Perge.",
+        details: {
+          transport: "Car",
+          activities: "Aspendos Theater, Perge ruins visit",
+          meals: "Breakfast, Lunch",
+          accommodation: "Antalya Beach Resort",
+          accommodationLink: "#",
+        },
+      },
+     
+    
+    ],
   },
   {
-    day: "Day-03",
-    title: "Notre-Dame – Iconic Gothic Cathedral",
-    description:
-      "Visit the world-famous medieval Catholic cathedral known for its French Gothic architecture.",
-    details: null,
+    city: "Cappadocia",
+    days: [
+      {
+        day: "Day-01",
+        title: "Göreme Open Air Museum",
+        description:
+          "Visit the Göreme Open Air Museum, famous for its rock-cut churches and frescoes.",
+        details: {
+          transport: "Car, Walk",
+          activities: "Explore Göreme Open Air Museum, Fairy Chimneys",
+          meals: "Breakfast, Lunch, Dinner",
+          accommodation: "Cappadocia Cave Suites",
+          accommodationLink: "#",
+        },
+      },
+      {
+        day: "Day-02",
+        title: "Hot Air Balloon Ride",
+        description:
+          "Experience sunrise over Cappadocia with a hot air balloon ride, enjoying breathtaking landscapes.",
+        details: {
+          transport: "Balloon, Car",
+          activities: "Hot air balloon flight, Photography",
+          meals: "Breakfast, Lunch",
+          accommodation: "Cappadocia Cave Suites",
+          accommodationLink: "#",
+        },
+      },
+     
+      
+    ],
   },
 ];
 
-// --- Sous-composant pour un seul jour ---
-const TourDayItem: React.FC<{ day: TourDay }> = ({ day }) => {
-  const [isOpen, setIsOpen] = useState(day.day === "Day-01");
 
+const TourDayItem: React.FC<{ day: TourDay }> = ({ day }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
 
   const renderDetails = (details: ActivityDetail) => (
@@ -81,11 +191,7 @@ const TourDayItem: React.FC<{ day: TourDay }> = ({ day }) => {
 
       <DetailLine icon={Plane} label="Transport" value={details.transport} />
       <DetailLine icon={Activity} label="Activities" value={details.activities} />
-      <DetailLine
-        icon={Utensils}
-        label="Meals"
-        value={details.meals.replace("Brakefast", "Breakfast")}
-      />
+      <DetailLine icon={Utensils} label="Meals" value={details.meals} />
       <div className="flex items-start text-sm">
         <Hotel className="w-4 h-4 text-blue-500 mr-4 mt-1 flex-shrink-0" />
         <div className="font-semibold text-gray-900 w-24 flex-shrink-0">
@@ -140,7 +246,6 @@ const TourDayItem: React.FC<{ day: TourDay }> = ({ day }) => {
   );
 };
 
-// Sous-composant utilitaire
 const DetailLine: React.FC<{ icon: any; label: string; value: string }> = ({
   icon: Icon,
   label,
@@ -153,41 +258,32 @@ const DetailLine: React.FC<{ icon: any; label: string; value: string }> = ({
   </div>
 );
 
-// --- Composant principal ---
 const TourItinerary: React.FC = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const toggleExpandAll = () => setIsExpanded(!isExpanded);
-
   return (
     <div className={`max-w-3xl bg-white rounded-lg mt-10 ${roboto.className}`}>
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-bold text-gray-900">Tour Itinerary</h2>
-        <button
-          onClick={toggleExpandAll}
-          className="text-blue-600 hover:text-blue-800 font-medium text-sm"
-        >
-          {isExpanded ? "Collapse All -" : "Expand All +"}
-        </button>
-      </div>
+      {cityData.map((cityItem, cityIndex) => (
+        <div key={cityIndex} className="mb-12">
+          {/* City Header */}
+          <div className="flex items-center p-3 rounded-md mb-6 mt-8">
+            <div className="bg-[#1781fe] w-10 h-10 flex items-center justify-center rounded-full mr-2">
+              <Send className="w-5 h-5 text-white rotate-45" />
+            </div>
+            <span className="text-lg font-semibold text-gray-800">
+              {cityItem.city}{" "}
+              <span className="ml-3 font-normal text-sm text-gray-600">
+                (Departure: 9:00 am – 9:30 am)
+              </span>
+            </span>
+          </div>
 
-  <div className="flex items-center p-3 rounded-md mb-6 mt-8">
-  <div className="bg-[#1781fe] w-10 h-10 flex items-center justify-center rounded-full mr-2">
-    <Send className="w-5 h-5 text-white rotate-45" />
-  </div>
-  <span className="text-lg font-semibold text-gray-800">
-    Paris, France{" "}
-    <span className="ml-3 font-normal text-sm text-gray-600">
-      (Departure: 8:00 am – 8:30 am)
-    </span>
-  </span>
-</div>
-
-
-      <div className="border border-gray-200 rounded-lg overflow-hidden">
-        {itineraryData.map((day, index) => (
-          <TourDayItem key={index} day={day} />
-        ))}
-      </div>
+          {/* City itinerary */}
+          <div className="border border-gray-200 rounded-lg overflow-hidden">
+            {cityItem.days.map((day, dayIndex) => (
+              <TourDayItem key={dayIndex} day={day} />
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
