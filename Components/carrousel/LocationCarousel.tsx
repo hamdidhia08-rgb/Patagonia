@@ -21,12 +21,13 @@ interface Location {
 }
 
 const locations: Location[] = [
-  { id: 1, name: 'Loire Valley', days: 1, imageSrc: '/images/antalya.jpg' },
-  { id: 2, name: 'Southern France', days: 1, imageSrc: '/images/antalya-2708343_1280.jpg' },
-  { id: 3, name: 'Louvre Museum', days: 3, imageSrc: '/images/830008420-1740-1740-w.jpg' },
-  { id: 4, name: 'Eiffel Tower', days: 1, imageSrc: '/images/cappadocia3.jpg' },
-  { id: 5, name: 'Mont Saint-Michel', days: 2, imageSrc: '/images/Fethiye.jpg' },
+  { id: 1, name: 'Antalya Old Town', days: 1, imageSrc: '/images/antalya.jpg' },
+  { id: 2, name: 'Cappadocia', days: 2, imageSrc: '/images/antalya-2708343_1280.jpg' },
+  { id: 3, name: 'Istanbul Hagia Sophia', days: 3, imageSrc: '/images/830008420-1740-1740-w.jpg' },
+  { id: 4, name: 'Cappadocia Hot Air Balloon', days: 1, imageSrc: '/images/cappadocia3.jpg' },
+  { id: 5, name: 'Fethiye Beach', days: 2, imageSrc: '/images/Fethiye.jpg' },
 ];
+
 
 const LocationCard: React.FC<Location> = ({ name, days, imageSrc }) => (
   <div className="flex flex-col cursor-pointer group">
