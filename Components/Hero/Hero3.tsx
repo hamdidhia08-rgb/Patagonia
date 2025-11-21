@@ -25,8 +25,13 @@ function HeroImages() {
           prevEl: '.swiper-button-prev',
         }}
         loop={true}
-        slidesPerView={3}     
-        spaceBetween={8}      
+        spaceBetween={8}
+        // ✅ Configuration responsive
+        breakpoints={{
+          0: { slidesPerView: 1 },       // mobile : 1 image
+          768: { slidesPerView: 2 },     // tablette : 2 images
+          1024: { slidesPerView: 3 },    // desktop : 3 images
+        }}
         className="w-full h-full"
       >
         {images.map((src, index) => (
@@ -36,7 +41,6 @@ function HeroImages() {
                 className="w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: `url(${src})` }}
               ></div>
-              <div className="absolute inset-0 "></div>
             </div>
           </SwiperSlide>
         ))}

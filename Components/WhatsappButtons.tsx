@@ -24,15 +24,22 @@ const WhatsappButtons: React.FC = () => {
     <button
       onClick={openWhatsapp}
       aria-label="Contact via WhatsApp"
-      className={`fixed bottom-28 right-8 z-[250] bg-[#25D366] p-3 rounded-full shadow-xl hover:bg-[#1ebe5b] transition-all duration-500 flex items-center justify-center
+      className={`fixed bottom-26 right-8 z-[250] bg-[#25D366] p-3 rounded-full shadow-xl hover:bg-[#1ebe5b] transition-all duration-500 flex items-center justify-center
         ${showScroll ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5 pointer-events-none"}
       `}
     >
-      <img
-        src="/images/Watsupp_icon.png"
-        alt="WhatsApp"
-        className="w-9 h-9"
-      />
+      <div className="relative w-9 h-9">
+       <img
+  src="/images/whatsup.svg"
+  alt="WhatsApp"
+  className="w-full h-full object-contain filter brightness-0 invert"
+/>
+
+        {/* Badge */}
+        <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center shadow-md">
+          1
+        </span>
+      </div>
     </button>
   );
 };
