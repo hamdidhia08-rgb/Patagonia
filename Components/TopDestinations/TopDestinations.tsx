@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -38,11 +42,20 @@ const destinations: Destination[] = [
 ];
 
 export default function TopDestinations() {
+  // Initialiser AOS seulement une fois
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Durée de l'animation
+      easing: "ease-in-out", // Courbe d'animation
+      once: true, // L'animation se joue qu'une seule fois
+    });
+  }, []);
+
   return (
-    <section className="pt-5 pb-0 bg-white relative">
+    <section className="pt-5 pb-10 bg-white relative">
       <div className="max-w-7xl mx-auto px-6 mt-20 relative">
         {/* Title */}
-        <div className="relative mb-10 text-center">
+        <div className="relative mb-10 text-center" data-aos="fade-up">
           {/* Image gauche */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-52 h-12 hidden md:block">
             <Image
@@ -94,8 +107,11 @@ export default function TopDestinations() {
           >
             {destinations.map((dest, index) => (
               <SwiperSlide key={index}>
-                <div className="flex flex-col items-center text-center mt-10">
-                  {/* Taille cercle légèrement agrandie */}
+                <div
+                  className="flex flex-col items-center text-center mt-10"
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100} // Animation décalée pour chaque slide
+                >
                   <div className="relative w-full max-w-[140px] sm:max-w-[160px] md:max-w-[180px] aspect-square rounded-full overflow-hidden mb-4 shadow-md group">
                     <Image
                       src={dest.image}
@@ -118,7 +134,7 @@ export default function TopDestinations() {
             ))}
           </Swiper>
 
-          {/* Custom Navigation Buttons avec espace entre flèches et images */}
+          {/* Custom Navigation Buttons */}
           <button
             aria-label="Previous slide"
             title="Previous slide"
@@ -144,9 +160,6 @@ export default function TopDestinations() {
           </button>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
     </section>
   );
 }

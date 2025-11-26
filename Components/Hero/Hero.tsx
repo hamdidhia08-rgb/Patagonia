@@ -1,13 +1,12 @@
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Barlow_Condensed, Just_Another_Hand } from "next/font/google";
-import { Play } from "lucide-react";
-import SearchTourBar from "../SearchTourBar/SearchTourBar";
+import { Play, Phone, Menu, User } from "lucide-react";
+import HeroText from "./HeroText";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const barlow = Barlow_Condensed({
   subsets: ["latin"],
@@ -23,83 +22,122 @@ const hand = Just_Another_Hand({
 
 export default function HeroSlider() {
   const slides = [
-    { id: 1, desktopImg: "/images/bg/125.png", mobileImg: "/images/bg/125.png" },
-    { id: 2, desktopImg: "/images/bg/cruise-banner.png", mobileImg: "/images/bg/cruise-banner.png" },
+    { id: 1, img: "/images/bg/h3-hero-bg-3.jpg" },
+    { id: 2, img: "/images/bg/h3-hero-bg-5.jpg" },
+    { id: 3, img: "/images/bg/h3-hero-bg-4.jpg" },
   ];
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: false });
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      AOS.refresh();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
-      <Swiper
-        modules={[Autoplay, Pagination]}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        loop
-        pagination={{ clickable: true }}
-        className="custom-swiper w-full h-full"
-      >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id} className="relative w-full h-full">
-            <Image
-              src={slide.desktopImg}
-              alt={`Slide ${slide.id}`}
-              fill
-              priority
-              sizes="100vw"
-              quality={100}
-              className="hidden md:block object-cover object-center"
-            />
-            <Image
-              src={slide.mobileImg}
-              alt={`Slide mobile ${slide.id}`}
-              fill
-              priority
-              sizes="100vw"
-              quality={100}
-              className="block md:hidden object-cover object-center"
-            />
+<section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[96.5vh] overflow-hidden">
 
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-transparent"></div>
+      {/* NAVBAR */}
+      <div className="absolute top-0 left-0 w-full z-40">
+        <nav className="w-full h-[90px] px-4 sm:px-6 md:px-16 lg:px-28 flex justify-between items-center bg-transparent">
+          <h1 className="MONLOGO text-white text-3xl font-bold tracking-wide">PATAGONIA</h1>
 
-           <div
-  className={`${barlow.variable} ${hand.variable} absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-16 lg:px-28 transform translate-y-10 md:-translate-y-5`}
->
+          {/* Menu Desktop */}
+          <ul className="hidden md:flex items-center gap-8 text-white font-medium text-lg">
+            <li className="hover:text-orange-400 transition">Home</li>
+            <li className="hover:text-orange-400 transition">Destinations</li>
+            <li className="hover:text-orange-400 transition">Tours</li>
+            <li className="hover:text-orange-400 transition">Blogs</li>
+            <li className="hover:text-orange-400 transition">About</li>
+            <li className="hover:text-orange-400 transition">Contact</li>
+          </ul>
 
-              <div className="w-full max-w-3xl flex flex-col items-center">
-                <p className="font-hand text-orange-400 text-3xl md:text-5xl leading-tight">
-                  Discover Turkey
-                </p>
-                <h2 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight drop-shadow-lg">
-                  Explore & Experience
-                </h2>
-                <h3 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-md">
-                  <span className="text-stroke-white">Adventure Awaits</span>
-                </h3>
-                <p className="text-white text-sm md:text-base lg:text-lg leading-snug opacity-95">
-                  From the bustling streets of Istanbul to the magical landscapes of Cappadocia, enjoy an unforgettable Turkish journey.
-                </p>
-                <div className="mt-4 md:mt-6 w-full">
-                  <SearchTourBar />
-                </div>
+          {/* Right Section */}
+          <div className="flex items-center gap-3 text-white">
+            {/* Call Us */}
+            <div className="hidden sm:flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-transparent border border-white flex items-center justify-center backdrop-blur-sm">
+                <Phone size={18} className="text-white" />
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-white/70 text-xs sm:text-sm tracking-wide">Call Us</span>
+                <span className="text-white font-semibold text-sm sm:text-base -mt-0.5">+90 538 507 39 47</span>
               </div>
             </div>
 
-            <div className="hidden md:flex absolute bottom-20 right-16">
-              <button
-                title="Play video"
-                className="relative w-20 h-20 flex items-center justify-center rounded-full border border-white/60 
-                  bg-white/10 backdrop-blur-md text-white shadow-lg transition-transform duration-300 
-                  hover:scale-110 hover:shadow-[0_0_25px_rgba(255,255,255,0.8)] group"
+            {/* Language Selector */}
+            <div className="flex items-center gap-1 sm:gap-2">
+              <span className="text-white/50 text-sm sm:text-base">|</span>
+              <select
+                aria-label="Language selector"
+                defaultValue="en"
+                className="bg-transparent text-white text-xs sm:text-base outline-none cursor-pointer"
               >
-                <Play size={32} className="transition-transform group-hover:scale-110" />
-                <span className="absolute inset-0 rounded-full border border-white/40 animate-ping"></span>
-                <span className="absolute inset-0 rounded-full border border-white/20 animate-pulse"></span>
-              </button>
+                <option value="en" className="text-black text-sm sm:text-base">English</option>
+                <option value="ar" className="text-black text-sm sm:text-base">العربية</option>
+                <option value="fr" className="text-black text-sm sm:text-base">Français</option>
+              </select>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
 
-      {/* 🌊 Image shape en bas */}
-      <div className="absolute bottom-0 w-full z-10">
+            {/* Login */}
+            <button className="hidden sm:flex px-4 sm:px-5 py-1 sm:py-2 border border-white rounded-full text-white font-medium hover:bg-white/20 transition backdrop-blur-sm flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
+              <User size={16} className="sm:mr-1" /> Login
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button aria-label="Open menu" className="w-10 h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur-sm md:hidden">
+              <Menu size={22} />
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      {/* Slides */}
+      {slides.map((slide, index) => (
+        <div
+          key={slide.id}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-[1200ms] ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+          data-aos="fade-in"
+        >
+          <Image
+            src={slide.img}
+            alt={`Slide ${slide.id}`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center animate-zoomHero"
+          />
+        </div>
+      ))}
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/35 to-transparent z-20"></div>
+
+      {/* Hero Text */}
+      <HeroText barlowVariable={barlow.variable} handVariable={hand.variable} />
+
+      {/* Video Button Desktop */}
+      <div className="hidden md:flex absolute bottom-20 right-16 z-30">
+        <button
+          aria-label="Play video"
+          className="relative w-20 h-20 flex items-center justify-center rounded-full border border-white/60 
+          bg-white/10 backdrop-blur-md text-white shadow-lg transition-transform duration-300 
+          hover:scale-110 hover:shadow-[0_0_25px_rgba(255,255,255,0.8)] group"
+        >
+          <Play size={32} className="transition-transform group-hover:scale-110" />
+          <span className="absolute inset-0 rounded-full border border-white/40 animate-ping"></span>
+          <span className="absolute inset-0 rounded-full border border-white/20 animate-pulse"></span>
+        </button>
+      </div>
+
+      {/* Bottom Shape */}
+      <div className="absolute bottom-0 w-full z-20">
         <Image
           src="/images/dhia.svg"
           alt="Bottom shape"

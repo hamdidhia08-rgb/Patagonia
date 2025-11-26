@@ -6,12 +6,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -22,8 +17,13 @@
 :root {
   --font-barlow: 'Barlow Condensed', sans-serif;
   --font-hand: 'Just Another Hand', cursive;
+    --font-inter: 'Inter', sans-serif;
+
 }
 
+.font-inter {
+  font-family: var(--font-inter);
+}
 .font-barlow {
   font-family: var(--font-barlow);
 }
@@ -128,8 +128,32 @@ body {
   .text-stroke-white {
     /* Propriété standard du contour de texte */
     -webkit-text-stroke: 1px white;
-    text-stroke: 1px white;
-    /* Rendre l'intérieur du texte transparent */
+     -webkit-text-stroke: 1px white;
     color: transparent;
   }
+}
+
+/* Police plus lisible (Inter déjà chargée précédemment) */
+.nav-items {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.3px;   /* Lettres plus espacées */
+  font-weight: 400;         /* Plus léger = plus élégant */
+}
+
+/* Espacement entre les items */
+.nav-item-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.MONLOGO{
+  letter-spacing: 1px;
+}
+@keyframes zoomHero {
+  0% { transform: scale(1.05); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1.05); }
+}
+
+.animate-zoomHero {
+  animation: zoomHero 10s ease-in-out infinite;
 }
