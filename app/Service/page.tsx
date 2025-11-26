@@ -8,8 +8,6 @@ import React from 'react';
 const Page = () => {
     return (
         <div>
-            <TopBar/>
-            <Navbar/>
             <Hero2/>
             <Service_Liste/>
         </div>

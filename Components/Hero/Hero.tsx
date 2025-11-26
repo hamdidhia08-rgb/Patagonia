@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link"; // ← IMPORTANT
 import { Barlow_Condensed, Just_Another_Hand } from "next/font/google";
 import { Play, Phone, Menu, User } from "lucide-react";
 import HeroText from "./HeroText";
@@ -48,14 +49,14 @@ export default function HeroSlider() {
         <nav className="w-full h-[90px] px-4 sm:px-6 md:px-16 lg:px-28 flex justify-between items-center bg-transparent">
           <h1 className="MONLOGO text-white text-3xl font-bold tracking-wide">PATAGONIA</h1>
 
-          {/* Menu Desktop */}
+          {/* Menu Desktop avec LINK */}
           <ul className="hidden md:flex items-center gap-8 text-white font-medium text-lg">
-            <li className="hover:text-orange-400 transition">Home</li>
-            <li className="hover:text-orange-400 transition">Destinations</li>
-            <li className="hover:text-orange-400 transition">Tours</li>
-            <li className="hover:text-orange-400 transition">Blogs</li>
-            <li className="hover:text-orange-400 transition">About</li>
-            <li className="hover:text-orange-400 transition">Contact</li>
+            <Link href="/" className="hover:text-orange-400 transition">Home</Link>
+            <Link href="/Service" className="hover:text-orange-400 transition">Services</Link>
+            <Link href="/tours" className="hover:text-orange-400 transition">Tours</Link>
+            <Link href="/blog" className="hover:text-orange-400 transition">Blogs</Link>
+            <Link href="/about" className="hover:text-orange-400 transition">About</Link>
+            <Link href="/contact" className="hover:text-orange-400 transition">Contact</Link>
           </ul>
 
           {/* Right Section */}
@@ -66,8 +67,7 @@ export default function HeroSlider() {
                 <Phone size={18} className="text-white" />
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="text-white/70 text-xs sm:text-sm tracking-wide">Call Us</span>
-                <span className="text-white font-semibold text-sm sm:text-base -mt-0.5">+90 538 507 39 47</span>
+                <span className="text-white font-semibold text-sm sm:text-base ">+90 538 507 39 47</span>
               </div>
             </div>
 
