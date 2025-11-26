@@ -73,7 +73,7 @@ export default function HeroSection() {
             <p className="text-gray-700 font-medium tracking-wide">
               Organized Group Tour
             </p>
-            <div className="relative w-full h-[5px] bg-gray-200 rounded-full overflow-hidden">
+            <div className="relative w-full h-[5px] bg-gray-300 rounded-full overflow-hidden">
               <div className="absolute left-0 top-0 h-full w-4/5 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"></div>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function HeroSection() {
             <p className="text-gray-700 font-medium tracking-wide">
               Single Customized Trip
             </p>
-            <div className="relative w-full h-[5px] bg-gray-200 rounded-full overflow-hidden">
+            <div className="relative w-full h-[5px] bg-gray-300 rounded-full overflow-hidden">
               <div className="absolute left-0 top-0 h-full w-2/3 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"></div>
             </div>
           </div>
