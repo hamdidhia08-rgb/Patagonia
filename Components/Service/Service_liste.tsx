@@ -116,7 +116,7 @@ const TourCard: React.FC<TourData> = ({ title, imageUrl, altText }) => {
             {title}
           </h3>
           <Link href="/Service/1">
-            <span className="cursor-pointer rounded-lg border border-white bg-transparent px-6 py-2 text-sm font-medium text-white transition duration-300 ">
+            <span className="cursor-pointer rounded-lg border border-white bg-transparent px-6 py-2 text-sm font-medium text-white transition duration-300 hover:bg-white hover:text-gray-800">
               View Service
             </span>
           </Link>
