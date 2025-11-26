@@ -24,7 +24,6 @@ export default function Home() {
   <NewsletterSection/>
   <About/>
   <Service/>
-  
   <AboutSection/>
   <ImageGallerySlider/>
 
