@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link"; // ← IMPORTANT
 import { Barlow_Condensed, Just_Another_Hand } from "next/font/google";
-import { Play, Phone, Menu, User } from "lucide-react";
+import { Play, Phone, Menu, User,ShoppingCart } from "lucide-react";
 import HeroText from "./HeroText";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -85,16 +85,35 @@ export default function HeroSlider() {
               </select>
             </div>
 
-            {/* Login */}
-            <button className="hidden sm:flex px-4 sm:px-5 py-1 sm:py-2 border border-white rounded-full text-white font-medium hover:bg-white/20 transition backdrop-blur-sm flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
-              <User size={16} className="sm:mr-1" /> Login
-            </button>
+          {/* Cart */}
+          <Link
+            href="/cart"
+            className="relative w-10 h-10 rounded-full bg-white/10 border border-white/30 
+            flex items-center justify-center backdrop-blur-sm hover:bg-white/20 transition"
+          >
+            <ShoppingCart size={20} className="text-white opacity-90" />
 
-            {/* Mobile Menu Button */}
+            {/* Badge */}
+            <span
+              className="absolute -top-1 -right-1 bg-orange-500 text-white text-[10px] 
+              w-4 h-4 rounded-full flex items-center justify-center font-bold shadow-lg"
+            >
+              2
+            </span>
+          </Link>
+
+
+            {/* Login */}
+<button className="hidden sm:flex px-4 sm:px-5 py-1 sm:py-2 rounded-full bg-white/10 border border-white/30 text-white font-medium hover:bg-white/20 transition backdrop-blur-sm flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
+  <User size={16} className="sm:mr-1" /> Login
+</button>
+
+            {/* Mobile Menu */}
             <button aria-label="Open menu" className="w-10 h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur-sm md:hidden">
               <Menu size={22} />
             </button>
           </div>
+
         </nav>
       </div>
 
