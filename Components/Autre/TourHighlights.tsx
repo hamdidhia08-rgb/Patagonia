@@ -56,7 +56,7 @@ const TourHighlights: React.FC = () => {
         border 
         border-gray-200 
         rounded-xl 
-        shadow-sm 
+        shadow-sm    
         bg-white
       ">
         <ul className="space-y-6">

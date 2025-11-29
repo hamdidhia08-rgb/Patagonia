@@ -47,7 +47,7 @@ const PriceCard: React.FC = () => {
       <div className="space-y-3">
         {/* Bouton principal - dégradé plus doux */}
             <button
-            className="w-full bg-gradient-to-r from-[#FF7E5F] to-[#FEB47B] 
+            className="w-full bg-[#ff6d50] 
             text-white font-semibold py-2.5 rounded-lg shadow-md 
             hover:shadow-lg hover:scale-[1.02] active:scale-[0.99]
             transition-all duration-200 ease-in-out flex items-center justify-center gap-2 text-sm">

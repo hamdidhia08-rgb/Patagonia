@@ -143,39 +143,7 @@ const cityData: CityItinerary[] = [
     
     ],
   },
-  {
-    city: "Cappadocia",
-    days: [
-      {
-        day: "Day-01",
-        title: "Göreme Open Air Museum",
-        description:
-          "Visit the Göreme Open Air Museum, famous for its rock-cut churches and frescoes.",
-        details: {
-          transport: "Car, Walk",
-          activities: "Explore Göreme Open Air Museum, Fairy Chimneys",
-          meals: "Breakfast, Lunch, Dinner",
-          accommodation: "Cappadocia Cave Suites",
-          accommodationLink: "#",
-        },
-      },
-      {
-        day: "Day-02",
-        title: "Hot Air Balloon Ride",
-        description:
-          "Experience sunrise over Cappadocia with a hot air balloon ride, enjoying breathtaking landscapes.",
-        details: {
-          transport: "Balloon, Car",
-          activities: "Hot air balloon flight, Photography",
-          meals: "Breakfast, Lunch",
-          accommodation: "Cappadocia Cave Suites",
-          accommodationLink: "#",
-        },
-      },
-     
-      
-    ],
-  },
+  
 ];
 
 
@@ -195,7 +163,7 @@ const TourDayItem: React.FC<{ day: TourDay }> = ({ day }) => {
       <div className="flex items-start text-sm">
         <Hotel className="w-4 h-4 text-blue-500 mr-4 mt-1 flex-shrink-0" />
         <div className="font-semibold text-gray-900 w-24 flex-shrink-0">
-          Accommodation
+          Hotel
         </div>
         <div className="text-gray-700 font-normal">
           : {details.accommodation}
@@ -260,21 +228,24 @@ const DetailLine: React.FC<{ icon: any; label: string; value: string }> = ({
 
 const TourItinerary: React.FC = () => {
   return (
-    <div className={`max-w-3xl bg-white rounded-lg mt-10 ${roboto.className}`}>
+    <div className={`max-w-6xl bg-white rounded-lg mt-10 ${roboto.className}`}>
       {cityData.map((cityItem, cityIndex) => (
         <div key={cityIndex} className="mb-12">
           {/* City Header */}
-          <div className="flex items-center p-3 rounded-md mb-6 mt-8">
-            <div className="bg-[#1781fe] w-10 h-10 flex items-center justify-center rounded-full mr-2">
-              <Send className="w-5 h-5 text-white rotate-45" />
-            </div>
-            <span className="text-lg font-semibold text-gray-800">
-              {cityItem.city}{" "}
-              <span className="ml-3 font-normal text-sm text-gray-600">
-                (Departure: 9:00 am – 9:30 am)
-              </span>
-            </span>
-          </div>
+          <div className="flex items-center mb-6 mt-8">
+  <div className="bg-[#1781fe] w-10 h-10 flex items-center justify-center rounded-full flex-shrink-0">
+    <Send className="w-5 h-5 text-white rotate-45" />
+  </div>
+  <div className="ml-4">
+    <span className="text-lg font-semibold text-gray-800">
+      {cityItem.city}
+    </span>
+    <span className="ml-2 font-normal text-sm text-gray-600">
+      (Departure: 9:00 am – 9:30 am)
+    </span>
+  </div>
+</div>
+
 
           {/* City itinerary */}
           <div className="border border-gray-200 rounded-lg overflow-hidden">

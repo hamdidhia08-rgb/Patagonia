@@ -18,7 +18,7 @@ export default function TopBar() {
 
   return (
     <div className="bg-[#26263e] text-white text-[13px] md:text-[14px] w-full z-50">
-      <div className="max-w-[1400px] mx-auto flex justify-center md:justify-between items-center px-4 py-1.5">
+      <div className="max-w-7xl  mx-auto flex justify-center md:justify-between items-center px-4 py-1.5">
         {/* ➤ Gauche */}
         <div className="flex flex-row flex-wrap items-center gap-4 text-center md:text-left justify-center md:justify-start">
           <span className="flex items-center gap-2">

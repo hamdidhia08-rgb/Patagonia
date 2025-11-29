@@ -13,7 +13,7 @@ const Blog = () => {
   return (
     <div className="bg-gray-100 min-h-screen"> {/* Fond gris pour toute la page */}
       <TopBar />
-      <Navbar />
+      <Navbar/>
       <Hero1 />
 
       {/* Container principal sous le Hero */}

@@ -52,7 +52,7 @@ export default function TopDestinations() {
   }, []);
 
   return (
-    <section className="pt-5 pb-10 bg-white relative">
+    <section className="pt-5 pb-30 bg-white relative">
       <div className="max-w-7xl mx-auto px-6 mt-20 relative">
         {/* Title */}
         <div className="relative mb-10 text-center" data-aos="fade-up">

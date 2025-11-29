@@ -23,8 +23,8 @@ const PackageCard: React.FC = () => {
       max-w-md 
       mx-auto 
       rounded-3xl 
-      bg-[#E5F7EB]
-      shadow-xl
+      bg-[#e5f5f7]
+      shadow-md
     ">
       
       {/* FIX 2: Correction de la syntaxe de la balise <h2>. 

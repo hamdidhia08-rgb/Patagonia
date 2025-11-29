@@ -2,12 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link"; // ← IMPORTANT
+import Link from "next/link"; 
 import { Barlow_Condensed, Just_Another_Hand } from "next/font/google";
 import { Play, Phone, Menu, User,ShoppingCart } from "lucide-react";
 import HeroText from "./HeroText";
 import AOS from "aos";
-import "aos/dist/aos.css";
 
 const barlow = Barlow_Condensed({
   subsets: ["latin"],
