@@ -104,7 +104,7 @@ export default function ToursPage() {
             />
 
             <TourCard
-              image="/images/fethiye.jpg"
+              image="/images/Fethiye.jpg"
               rating={4.7}
               reviews={35}
               location="Fethiye"
