@@ -157,17 +157,32 @@ body {
 .animate-zoomHero {
   animation: zoomHero 10s ease-in-out infinite;
 }
-  .animate-bar1 {
-          animation: fillBar1 1.3s ease-out forwards;
-        }
-        .animate-bar2 {
-          animation: fillBar2 1.5s ease-out forwards;
-        }
-        @keyframes fillBar1 {
-          0% { width: 0%; }
-          100% { width: 80%; }
-        }
-        @keyframes fillBar2 {
-          0% { width: 0%; }
-          100% { width: 66.66%; }
-        }
+/* Animations des barres de progression */
+.animate-bar1 {
+  animation: fillBar1 1.2s ease-out forwards;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.4); /* léger glow */
+}
+
+.animate-bar2 {
+  animation: fillBar2 1.2s ease-out forwards;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.4);
+}
+
+@keyframes fillBar1 {
+  0% { width: 0%; }
+  100% { width: 80%; }
+}
+
+@keyframes fillBar2 {
+  0% { width: 0%; }
+  100% { width: 66.66%; }
+}
+/* Animations des barres */
+.bar {
+  width: 0%;
+  height: 5px;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.4);
+  background: linear-gradient(90deg, #f97316, #fb923c);
+  transition: width 1.2s ease-out;
+}
