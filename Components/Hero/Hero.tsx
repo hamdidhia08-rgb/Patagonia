@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Barlow_Condensed, Just_Another_Hand } from "next/font/google";
 import { Play, Phone, Menu, User,ShoppingCart } from "lucide-react";
 import HeroText from "./HeroText";
+import MobileDrawer from "../Navbar/MobileDrawer";
+
 import AOS from "aos";
 
 const barlow = Barlow_Condensed({
@@ -27,6 +29,7 @@ export default function HeroSlider() {
     { id: 3, img: "/images/bg/h3-hero-bg-4.jpg" },
   ];
 
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -42,6 +45,7 @@ export default function HeroSlider() {
 
   return (
 <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[96.5vh] overflow-hidden">
+<MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
       {/* NAVBAR */}
       <div className="absolute top-0 left-0 w-full z-40">
@@ -108,7 +112,7 @@ export default function HeroSlider() {
 </button>
 
             {/* Mobile Menu */}
-            <button aria-label="Open menu" className="w-10 h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur-sm md:hidden">
+            <button onClick={() => setDrawerOpen(true)} aria-label="Open menu" className="w-10 h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur-sm md:hidden">
               <Menu size={22} />
             </button>
           </div>
