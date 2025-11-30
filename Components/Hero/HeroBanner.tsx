@@ -20,7 +20,8 @@ const AVATAR_DATA: Avatar[] = [
 
 export const HeroBanner = () => {
     return (
-        <div className="relative w-full overflow-hidden bg-transparent">
+        <div className="relative w-full overflow-hidden bg-transparent " data-aos="fade-up"
+          data-aos-delay="300">
             <div className="mx-auto max-w-full">
                 {/* Conteneur principal */}
                 <div className="flex items-center justify-center space-x-2">

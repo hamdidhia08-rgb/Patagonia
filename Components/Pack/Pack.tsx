@@ -4,6 +4,11 @@ import Image from "next/image";
 import { Barlow_Condensed, Just_Another_Hand } from "next/font/google";
 // Ajout de ArrowRight et Users
 import { Star, MapPin, ArrowRight, Plane, Users } from "lucide-react"; 
+import { motion } from "framer-motion";
+import FloatingShapes from "../FloatingShapes";
+import { useEffect } from "react"; // <-- pour AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // --- Définition des Polices ---
 const barlow = Barlow_Condensed({
@@ -267,21 +272,60 @@ const RecommendationCard: React.FC<{ data: TripOffer }> = ({ data }) => {
 
 // --- Composant Principal (Mise à jour des boutons de catégorie) ---
 const RecommendedSection: React.FC = () => {
+   useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true, // animation qu'une seule fois
+    });
+  }, []);
   return (
-    <section className={`py-12 px-4 md:px-8 bg-gray-100 ${barlow.className}`}>
-      {/* Sous-titre général (couleur orange ajustée) */}
-      <p className={`${hand.className} text-center text-orange-600 text-lg md:text-4xl mb-2`}>
-        Discover our top picks
-      </p>
-      {/* Titre principal */}
-      <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8">
-        Recommended for you with the best deals and experiences
-      </h2>
+    <div className="relative w-full">
 
-      <CategoryButtons activeCategory="Tour" />
+      {/* --- IMAGE GAUCHE (vertical center) --- */}
+      <Image
+        src="/images/bg-03.png"
+        alt="Left Decoration"
+        width={180}
+        height={220}
+        className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-0"
+      />
 
-      <div className="flex justify-center">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full justify-items-center">
+      {/* --- IMAGE DROITE (vertical center) --- */}
+<Image
+  src="/images/image-03.png"
+  alt="Right Decoration"
+  width={240}
+  height={240}
+  className="hidden md:block absolute -right-0 top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none"
+/>
+
+
+      <section className={`py-12 px-4 md:px-8 bg-gradient-to-b from-white via-gray-50 to-gray-100 ${barlow.className}`}>
+<div className="relative w-full flex flex-col items-center justify-center mb-8 overflow-visible z-20">
+
+  {/* === FORMES ANIMÉES AUTOUR DU TITRE === */}
+  <FloatingShapes/>
+
+  {/* Sous-titre */}
+  <p data-aos="fade-up" className={`${hand.className}  text-center text-orange-600 text-lg md:text-4xl mb-2`}>
+    Discover our top picks
+  </p>
+
+  {/* Titre principal */}
+  <h2  data-aos="fade-up" data-aos-delay="100" className="text-2xl md:text-3xl font-bold text-center text-gray-800 relative z-10">
+    Recommended for you with the best deals and experiences
+  </h2>
+  </div>
+
+
+      {/* Boutons de catégories */}
+        <div data-aos="fade-up" data-aos-delay="200">
+          <CategoryButtons activeCategory="Tour" />
+        </div>
+
+      <div className="flex justify-center" data-aos="fade-up" data-aos-delay="300">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl w-full justify-items-center">
           {recommendationsData.map((data) => (
             <RecommendationCard key={data.id} data={data} />
           ))}
@@ -289,13 +333,14 @@ const RecommendedSection: React.FC = () => {
       </div>
 
       {/* Ligne décorative + bouton Voir Plus */}
-      <div className="mt-10 flex flex-col items-center">
+      <div className="mt-10 flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
         <div className="w-24 h-1 bg-gray-400 rounded mb-4"></div>
         <button className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-full transition">
           Voir Plus
         </button>
       </div>
     </section>
+    </div>
   );
 };
 

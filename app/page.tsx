@@ -19,10 +19,10 @@ export default function Home() {
   return (
  <>
   <HeroSlider/>
+  <About/>
   <TopDestinations/>
   <RecommendedSection/>
   <NewsletterSection/>
-  <About/>
   <Service/>
   <AboutSection/>
   <ImageGallerySlider/>

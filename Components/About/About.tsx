@@ -18,7 +18,7 @@ const hand = Just_Another_Hand({
 export default function HeroSection() {
   return (
     <section
-      className={`${barlow.variable} ${hand.variable} relative flex flex-col lg:flex-row items-center justify-center text-center lg:text-left px-6 sm:px-12 md:px-20 lg:px-24 xl:px-32 py-20 bg-gradient-to-br from-orange-50 via-white to-orange-100`}
+      className={`${barlow.variable} ${hand.variable} relative flex flex-col lg:flex-row items-center justify-center text-center lg:text-left px-6 sm:px-12 md:px-20 lg:px-24 xl:px-32 py-20 bg-gradient-to-br `}
     >
  {/* IMAGE GAUCHE — cachée sur mobile */}
 <div className="relative hidden lg:flex justify-center items-center w-full lg:w-1/2">
@@ -73,7 +73,7 @@ export default function HeroSection() {
             <p className="text-gray-700 font-medium tracking-wide">
               Organized Group Tour
             </p>
-            <div className="relative w-full h-[5px] bg-gray-300 rounded-full overflow-hidden">
+            <div className="relative w-full h-[5px] bg-gray-200 rounded-full overflow-hidden mt-2">
               <div className="absolute left-0 top-0 h-full w-4/5 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"></div>
             </div>
           </div>
@@ -82,14 +82,14 @@ export default function HeroSection() {
             <p className="text-gray-700 font-medium tracking-wide">
               Single Customized Trip
             </p>
-            <div className="relative w-full h-[5px] bg-gray-300 rounded-full overflow-hidden">
+            <div className="relative w-full h-[5px] bg-gray-200 rounded-full overflow-hidden mt-2">
               <div className="absolute left-0 top-0 h-full w-2/3 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"></div>
             </div>
           </div>
         </div>
 
         {/* Bouton */}
-        <button className="mt-10 px-10 py-3.5 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300">
+        <button className="mt-8 px-10 py-3.5 bg-gradient-to-r from-orange-400 to-orange-500 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300">
           MORE INFO
         </button>
       </div>
