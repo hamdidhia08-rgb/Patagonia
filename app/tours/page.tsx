@@ -5,6 +5,8 @@ import FiltersSidebar from "@/Components/Filter/FiltersSidebar";
 import HeroFilter from "@/Components/Hero/HeroFilter";
 import Navbar from "@/Components/Navbar/Nav";
 import TopBar from "@/Components/TopBar/TopBar";
+import MobileFiltersDrawer from "@/Components/Filter/MobileFiltersDrawer";
+
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -18,7 +20,7 @@ export default function ToursPage() {
       <TopBar />
       <Navbar />
       <HeroFilter />
-
+      <MobileFiltersDrawer />
       <div className="w-full bg-[#FBFBFB] max-w-[1400px] mx-auto px-0 py-10">
 
         {/* FLEX responsive: colonne en mobile, ligne en desktop */}
