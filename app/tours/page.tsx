@@ -8,6 +8,8 @@ import TopBar from "@/Components/TopBar/TopBar";
 import MobileFiltersDrawer from "@/Components/Filter/MobileFiltersDrawer";
 
 import { Inter } from "next/font/google";
+import WhatsappButtons from "@/Components/WhatsappButtons";
+import ScrollToTopButton from "@/Components/ScrollToTopButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,6 +23,8 @@ export default function ToursPage() {
       <Navbar />
       <HeroFilter />
       <MobileFiltersDrawer />
+      <WhatsappButtons/>
+      <ScrollToTopButton/>
       <div className="w-full bg-[#FBFBFB] max-w-[1400px] mx-auto px-0 py-10">
 
         {/* FLEX responsive: colonne en mobile, ligne en desktop */}

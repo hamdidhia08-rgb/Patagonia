@@ -20,16 +20,18 @@ const AVATAR_DATA: Avatar[] = [
 
 export const HeroBanner = () => {
     return (
-        <div className="relative w-full overflow-hidden bg-transparent " data-aos="fade-up"
-          data-aos-delay="300">
-            <div className="mx-auto max-w-full">
-                {/* Conteneur principal */}
+        <div
+            className="relative w-full overflow-hidden bg-transparent"
+            data-aos="fade-up"
+            data-aos-delay="300"
+        >
+            <div className="mx-auto max-w-full mt-4 mb-4 md:mt-0 md:mb-0">
                 <div className="flex items-center justify-center space-x-2">
                     
-                    {/* Section Avatars */}
-                    <div className="flex items-center -space-x-4"> {/* <- Chevauchement augmenté */}
+                    {/* Avatars */}
+                    <div className="flex items-center -space-x-4">
                         {AVATAR_DATA.map((avatar, index) => (
-                            <div 
+                            <div
                                 key={avatar.id}
                                 className={`relative w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full 
                                     border-2 border-white shadow-lg 
@@ -41,10 +43,10 @@ export const HeroBanner = () => {
                                         {avatar.specialText}
                                     </span>
                                 ) : (
-                                    <Image 
-                                        src={avatar.src} 
-                                        alt={avatar.alt} 
-                                        fill 
+                                    <Image
+                                        src={avatar.src}
+                                        alt={avatar.alt}
+                                        fill
                                         sizes="(max-width: 768px) 40px, 56px"
                                         className="rounded-full object-cover"
                                     />
@@ -54,26 +56,27 @@ export const HeroBanner = () => {
                     </div>
 
                     {/* Texte */}
-                    <div className="flex flex-col text-white leading-tight -ml-2"> {/* <- Réduction marge gauche */}
+                    <div className="flex flex-col text-white leading-tight -ml-2">
                         <span className="text-base md:text-lg lg:text-xl font-semibold tracking-tight">
                             35k People booked
                         </span>
-                        <span className="text-base md:text-lg lg:text-xl font-semibold tracking-tight mt-0">
+
+                        {/* ❌ Hidden on mobile / ✔ Visible on desktop */}
+                        <span className="hidden md:inline-block text-lg lg:text-xl font-semibold tracking-tight mt-0">
                             dream place
                         </span>
                     </div>
 
                     {/* Flèche design */}
-                    <div className="relative w-24 h-24 md:w-28 md:h-28 lg:w-34 lg:h-34 ml-2">
-                        <Image 
-                            src="/images/h3-hero-shape.png" 
-                            alt="Design de flèche" 
-                            fill 
-                            style={{ objectFit: 'contain' }}
-                            className="object-contain" 
+                    <div className="hidden md:block relative w-28 md:w-28 md:h-28 lg:w-34 lg:h-34 ml-2">
+                        <Image
+                            src="/images/h3-hero-shape.png"
+                            alt="Design de flèche"
+                            fill
+                            style={{ objectFit: "contain" }}
+                            className="object-contain"
                         />
                     </div>
-
 
                 </div>
             </div>

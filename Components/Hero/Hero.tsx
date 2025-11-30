@@ -44,7 +44,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-<section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[96.5vh] overflow-hidden">
+<section className="relative w-full h-[65vh] sm:h-[80vh] md:h-[96.5vh] overflow-hidden">
 <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
       {/* NAVBAR */}
@@ -107,9 +107,9 @@ export default function HeroSlider() {
 
 
             {/* Login */}
-<button className="hidden sm:flex px-4 sm:px-5 py-1 sm:py-2 rounded-full bg-white/10 border border-white/30 text-white font-medium hover:bg-white/20 transition backdrop-blur-sm flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
-  <User size={16} className="sm:mr-1" /> Login
-</button>
+            <button className="hidden sm:flex px-4 sm:px-5 py-1 sm:py-2 rounded-full bg-white/10 border border-white/30 text-white font-medium hover:bg-white/20 transition backdrop-blur-sm flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
+              <User size={16} className="sm:mr-1" /> Login
+            </button>
 
             {/* Mobile Menu */}
             <button onClick={() => setDrawerOpen(true)} aria-label="Open menu" className="w-10 h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center backdrop-blur-sm md:hidden">

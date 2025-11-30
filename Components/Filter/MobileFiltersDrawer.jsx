@@ -13,8 +13,9 @@ export default function MobileFiltersDrawer() {
       <button
         onClick={() => setOpen(true)}
         className="
-          fixed bottom-5 right-0 z-40 
-          bg-orange-500 text-white h-12 w-14
+          top-1/2 -translate-y-1/2
+          fixed bottom-0 right-0 z-40 
+          bg-orange-500 text-white h-12 w-15
           flex items-center justify-center
           rounded-l-2xl
           shadow-xl active:scale-95

@@ -47,9 +47,10 @@ function HeroFilter() {
           </h1>
 
           {/* Sous-titre mobile → centré */}
-          <p className="text-sm font-light text-gray-100 drop-shadow-lg block md:hidden text-center">
-            {subHeading}
-          </p>
+            <p className="text-sm font-light text-gray-200 drop-shadow-lg block md:hidden text-center mt-3
+              max-w-[85%] mx-auto px-1">
+              {subHeading}
+            </p>
 
           {/* Sous-titre desktop → aligné à gauche */}
           <p className="text-base md:text-lg font-light text-gray-100 drop-shadow-lg hidden md:block">
