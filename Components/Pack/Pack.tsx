@@ -305,7 +305,9 @@ const RecommendedSection: React.FC = () => {
 <div className="relative w-full flex flex-col items-center justify-center mb-8 overflow-visible z-20">
 
   {/* === FORMES ANIMÉES AUTOUR DU TITRE === */}
+  
   <FloatingShapes/>
+
 
   {/* Sous-titre */}
   <p data-aos="fade-up" className={`${hand.className}  text-center text-orange-600 text-lg md:text-4xl mb-2`}>
