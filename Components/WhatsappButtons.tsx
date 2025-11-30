@@ -24,7 +24,7 @@ const WhatsappButtons: React.FC = () => {
     <button
       onClick={openWhatsapp}
       aria-label="Contact via WhatsApp"
-      className={`fixed bottom-26 right-8 z-[250] bg-[#25D366] p-3 rounded-full shadow-xl hover:bg-[#1ebe5b] transition-all duration-500 flex items-center justify-center
+      className={`fixed bottom-26 right-2 z-[250] bg-[#25D366] p-3 rounded-full shadow-xl hover:bg-[#1ebe5b] transition-all duration-500 flex items-center justify-center
         ${showScroll ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5 pointer-events-none"}
       `}
     >

@@ -25,7 +25,7 @@ const ScrollToTopButton: React.FC = () => {
     <button
       onClick={handleClick}
       aria-label="Scroll back to top"
-      className={`fixed bottom-8 right-8 z-50 bg-[#26263d] text-white p-4 rounded-full shadow-xl transition-all duration-300 hover:bg-[#1e1e33] ${
+      className={`fixed bottom-8 right-2 z-50 bg-[#26263d] text-white p-4 rounded-full shadow-xl transition-all duration-300 hover:bg-[#1e1e33] ${
         showButton
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-4 pointer-events-none"

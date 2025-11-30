@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { X, Phone, User, ShoppingCart } from "lucide-react";
+import Image from "next/image";
 
 export default function MobileDrawer({ open, onClose }) {
   return (
@@ -38,7 +39,17 @@ export default function MobileDrawer({ open, onClose }) {
             </button>
 
             {/* LOGO */}
-            <h1 className="text-black text-3xl font-bold tracking-wide mb-10">PATAGONIA</h1>
+            <div className="mb-10">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/logoi.png"
+                  alt="Patagonia Logo"
+                  width={140}
+                  height={60}
+                  priority
+                />
+              </Link>
+            </div>
 
             {/* NAVIGATION LINKS */}
             <nav className="flex flex-col gap-6 text-lg font-semibold text-gray-800">

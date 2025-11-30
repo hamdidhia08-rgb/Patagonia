@@ -37,7 +37,7 @@ export default function ToursPage() {
 
           {/* RIGHT — List of tours */}
           <div className="flex-1">
-            <div className={`${inter.className} flex items-center justify-between mb-6 px-3 md:px-0`}>
+            <div className={`${inter.className} flex items-center justify-between mb-6 px-5 md:px-0`}>
               <p className="text-gray-600 font-medium">14 tours found</p>
 
               <div className="flex items-center gap-4">
@@ -49,7 +49,7 @@ export default function ToursPage() {
               </div>
             </div>
 
-              <div className="flex flex-col gap-6 px-3 md:px-0">
+              <div className="flex flex-col gap-6 px-5 md:px-0">
               
               <TourCard
                 image="/images/cappadocia3.jpg"
