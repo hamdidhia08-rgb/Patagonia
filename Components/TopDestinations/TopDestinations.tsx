@@ -138,7 +138,7 @@ export default function TopDestinations() {
           <button
             aria-label="Previous slide"
             title="Previous slide"
-            className="custom-prev flex absolute -left-10 top-1/2 -translate-y-1/2 z-50 
+            className="custom-prev flex absolute -left-5 top-1/2 -translate-y-1/2 z-50 
                       bg-gray-200 text-gray-700 rounded-full shadow-sm 
                       w-9 h-9 items-center justify-center 
                       hover:bg-gray-300 hover:shadow-md 
@@ -150,7 +150,7 @@ export default function TopDestinations() {
           <button
             aria-label="Next slide"
             title="Next slide"
-            className="custom-next flex absolute -right-10 top-1/2 -translate-y-1/2 z-50 
+            className="custom-next flex absolute -right-5 top-1/2 -translate-y-1/2 z-50 
                       bg-gray-200 text-gray-700 rounded-full shadow-sm 
                       w-9 h-9 items-center justify-center 
                       hover:bg-gray-300 hover:shadow-md 
