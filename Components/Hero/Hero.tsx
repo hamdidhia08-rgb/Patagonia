@@ -44,7 +44,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-<section className="relative w-full h-[65vh] sm:h-[80vh] md:h-[96.5vh] overflow-hidden">
+<section className="relative w-full h-[70vh] sm:h-[75vh] md:h-[96.5vh] overflow-hidden">
 <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
       {/* NAVBAR */}
@@ -75,18 +75,19 @@ export default function HeroSlider() {
             </div>
 
             {/* Language Selector */}
-            <div className="flex items-center gap-1 sm:gap-2">
-              <span className="text-white/50 text-sm sm:text-base">|</span>
-              <select
-                aria-label="Language selector"
-                defaultValue="en"
-                className="bg-transparent text-white text-xs sm:text-base outline-none cursor-pointer"
-              >
-                <option value="en" className="text-black text-sm sm:text-base">English</option>
-                <option value="ar" className="text-black text-sm sm:text-base">العربية</option>
-                <option value="fr" className="text-black text-sm sm:text-base">Français</option>
-              </select>
-            </div>
+              <div className="hidden sm:flex items-center gap-1 sm:gap-2">
+                <span className="text-white/50 text-sm sm:text-base">|</span>
+                <select
+                  aria-label="Language selector"
+                  defaultValue="en"
+                  className="bg-transparent text-white text-xs sm:text-base outline-none cursor-pointer"
+                >
+                  <option value="en" className="text-black text-sm sm:text-base">English</option>
+                  <option value="ar" className="text-black text-sm sm:text-base">العربية</option>
+                  <option value="fr" className="text-black text-sm sm:text-base">Français</option>
+                </select>
+              </div>
+
 
           {/* Cart */}
           <Link

@@ -43,84 +43,78 @@ export default function DoiInthanonTour() {
         <span>Hagia Sophia & Blue Mosque Walking Tour</span>
       </div>
 
-      {/* Title + Icons */}
-      <div className="flex justify-between items-start">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">
-            Hagia Sophia & Blue Mosque Walking Tour
-          </h1>
+    <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-0">
+  <div>
+    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+      Hagia Sophia & Blue Mosque Walking Tour
+    </h1>
+    <div className="flex items-center gap-2 mt-2 text-gray-700 text-sm sm:text-base">
+      <span className="text-red-500 font-semibold">★ 4.8</span>
+      <span>(2 reviews)</span>
+      <MapPin size={16} className="text-gray-400" />
+      <span className="text-gray-600">Istanbul, Turkey</span>
+    </div>
+  </div>
 
-          <div className="flex items-center gap-2 mt-3 text-gray-700">
-            <span className="text-red-500 font-semibold text-lg">★ 4.8</span>
-            <span>(2 reviews)</span>
-            <MapPin size={16} className="text-gray-400" />
-            <span className="text-gray-600">Istanbul, Turkey</span>
-          </div>
-        </div>
+  <div className="flex items-center gap-2 md:gap-3">
+    <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
+      <Share2 size={20} />
+    </button>
 
-        <div className="flex items-center gap-3">
-          <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
-            <Share2 size={20} />
-          </button>
+    <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
+      <Heart size={20} />
+    </button>
+  </div>
+</div>
 
-          <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition">
-            <Heart size={20} />
-          </button>
-        </div>
-      </div>
 
       {/* Images Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-[57%_43%] gap-2 mt-8">
-        {/* Main Image */}
-        <div
-          className="relative cursor-pointer rounded-xl overflow-hidden"
-          onClick={() => openModal(0)}
-        >
-          <Image
-            src={images[0]}
-            alt="Main Tour"
-            width={1200}
-            height={700}
-            className="w-full h-[420px] object-cover rounded-xl transform transition duration-300 hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-40 transition rounded-xl"></div>
-        </div>
+     <div className="grid grid-cols-1 md:grid-cols-[57%_43%] gap-2 mt-8">
+  {/* Main Image */}
+  <div className="relative cursor-pointer rounded-xl overflow-hidden" onClick={() => openModal(0)}>
+    <Image
+      src={images[0]}
+      alt="Main Tour"
+      width={1200}
+      height={700}
+      className="w-full h-64 sm:h-80 md:h-[420px] object-cover rounded-xl transform transition duration-300 hover:scale-105 md:hover:scale-105"
+    />
+    <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-40 transition rounded-xl"></div>
+  </div>
 
-        {/* Right Images */}
-        <div className="grid grid-cols-2 grid-rows-2 gap-2 h-[420px]">
-          {images.slice(1).map((src, i) => (
-            <div
-              key={i}
-              className="relative cursor-pointer rounded-xl overflow-hidden"
-              onClick={() => openModal(i + 1)}
-            >
-              <Image
-                src={src}
-                alt={`Right ${i + 1}`}
-                width={700}
-                height={420}
-                className="w-full h-full object-cover rounded-xl transform transition duration-300 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-40 transition rounded-xl"></div>
-              {i === 3 && (
-                <button
-                  className="
-                    absolute bottom-3 left-1/2 -translate-x-1/2
-                    bg-white/80 backdrop-blur-sm 
-                    text-black/80 font-semibold 
-                    px-4 py-2 rounded-lg 
-                    hover:bg-white/90 transition
-                    flex items-center gap-1
-                  "
-                >
-                  <ImageIcon size={18} />
-                  All Photos
-                </button>
-              )}
-            </div>
-          ))}
-        </div>
+  {/* Right Images */}
+  <div className="grid grid-cols-2 grid-rows-2 gap-2 h-64 sm:h-80 md:h-[420px]">
+    {images.slice(1).map((src, i) => (
+      <div key={i} className="relative cursor-pointer rounded-xl overflow-hidden" onClick={() => openModal(i + 1)}>
+        <Image
+          src={src}
+          alt={`Right ${i + 1}`}
+          width={700}
+          height={420}
+          className="w-full h-full object-cover rounded-xl transform transition duration-300 hover:scale-105 md:hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-40 transition rounded-xl"></div>
+        {i === 3 && (
+          <button
+            className="
+              absolute bottom-2 left-1/2 -translate-x-1/2
+              bg-white/80 backdrop-blur-sm 
+              text-black/80 font-semibold 
+              px-3 py-1 rounded-lg 
+              hover:bg-white/90 transition
+              flex items-center gap-1
+              text-xs sm:text-sm
+              whitespace-nowrap">
+            <ImageIcon size={16} />
+            All Photos
+          </button>
+
+        )}
       </div>
+    ))}
+  </div>
+</div>
+
 
       {/* Modal */}
       {isModalOpen && (
