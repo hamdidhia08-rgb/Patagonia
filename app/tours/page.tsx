@@ -18,19 +18,20 @@ export default function ToursPage() {
       <TopBar />
       <Navbar />
       <HeroFilter />
+
       <div className="w-full bg-[#FBFBFB] max-w-[1400px] mx-auto px-0 py-10">
 
-        <div className="flex gap-10">
+        {/* FLEX responsive: colonne en mobile, ligne en desktop */}
+        <div className="flex gap-10 flex-col md:flex-row">
 
-          {/* LEFT — Filters */}
-          <div className="w-[320px] flex-shrink-0">
+          {/* LEFT — Filters → caché en mobile */}
+          <div className="w-[320px] flex-shrink-0 hidden md:block">
             <FiltersSidebar />
           </div>
 
           {/* RIGHT — List of tours */}
           <div className="flex-1">
-            {/* 👇 Ajouter la font Inter ici */}
-            <div className={`${inter.className} flex items-center justify-between mb-6`}>
+            <div className={`${inter.className} flex items-center justify-between mb-6 px-3 md:px-0`}>
               <p className="text-gray-600 font-medium">14 tours found</p>
 
               <div className="flex items-center gap-4">
@@ -42,31 +43,31 @@ export default function ToursPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-6">
-           <TourCard
-            image="/images/cappadocia3.jpg"
-            rating={5}
-            reviews={1}
-            location="Cappadocia"
-            title="Hot Air Balloon Sunrise Experience"
-            duration="3 – 5 hours"
-            groupSize="0 – 12"
-            description="Enjoy a breathtaking sunrise ride over the unique landscapes of Cappadocia with a guided tour."
-            price={250}
-          />
+              <div className="flex flex-col gap-6 px-3 md:px-0">
+              
+              <TourCard
+                image="/images/cappadocia3.jpg"
+                rating={5}
+                reviews={1}
+                location="Cappadocia"
+                title="Hot Air Balloon Sunrise Experience"
+                duration="3 – 5 hours"
+                groupSize="0 – 12"
+                description="Enjoy a breathtaking sunrise ride over the unique landscapes of Cappadocia with a guided tour."
+                price={250}
+              />
 
-          <TourCard
-            image="/images/sainte-sophie-2-1-1300x867.png"
-            rating={4.8}
-            reviews={2}
-            location="Istanbul"
-            title="Hagia Sophia & Blue Mosque Walking Tour"
-            duration="4 – 6 hours"
-            groupSize="0 – 20"
-            description="Explore Istanbul's iconic landmarks, including Hagia Sophia and the Blue Mosque, on this guided walking tour."
-            price={70}
-          />
-
+              <TourCard
+                image="/images/sainte-sophie-2-1-1300x867.png"
+                rating={4.8}
+                reviews={2}
+                location="Istanbul"
+                title="Hagia Sophia & Blue Mosque Walking Tour"
+                duration="4 – 6 hours"
+                groupSize="0 – 20"
+                description="Explore Istanbul's iconic landmarks, including Hagia Sophia and the Blue Mosque, on this guided walking tour."
+                price={70}
+              />
 
               <TourCard
                 image="/images/Bodrum.webp"
@@ -91,29 +92,30 @@ export default function ToursPage() {
                 description="Visit the charming streets of Antalya’s Old Town, explore ancient landmarks, and enjoy the beautiful waterfalls nearby on this full-day tour."
                 price={75}
               />
-              <TourCard
-              image="/images/pamukkale-2.jpg"
-              rating={4.8}
-              reviews={40}
-              location="Pamukkale"
-              title="Pamukkale & Hierapolis Ancient City Tour"
-              duration="5 – 7 hours"
-              groupSize="0 – 20"
-              description="Explore the stunning white terraces of Pamukkale and the ancient ruins of Hierapolis. A perfect day trip to marvel at natural beauty and history."
-              price={80}
-            />
 
-            <TourCard
-              image="/images/Fethiye.jpg"
-              rating={4.7}
-              reviews={35}
-              location="Fethiye"
-              title="Fethiye Blue Lagoon & Ölüdeniz Beach Tour"
-              duration="6 – 9 hours"
-              groupSize="0 – 25"
-              description="Relax at the famous Blue Lagoon, enjoy crystal-clear waters at Ölüdeniz Beach, and take in the breathtaking coastal scenery on this full-day tour."
-              price={85}
-            />
+              <TourCard
+                image="/images/pamukkale-2.jpg"
+                rating={4.8}
+                reviews={40}
+                location="Pamukkale"
+                title="Pamukkale & Hierapolis Ancient City Tour"
+                duration="5 – 7 hours"
+                groupSize="0 – 20"
+                description="Explore the stunning white terraces of Pamukkale and the ancient ruins of Hierapolis. A perfect day trip to marvel at natural beauty and history."
+                price={80}
+              />
+
+              <TourCard
+                image="/images/Fethiye.jpg"
+                rating={4.7}
+                reviews={35}
+                location="Fethiye"
+                title="Fethiye Blue Lagoon & Ölüdeniz Beach Tour"
+                duration="6 – 9 hours"
+                groupSize="0 – 25"
+                description="Relax at the famous Blue Lagoon, enjoy crystal-clear waters at Ölüdeniz Beach, and take in the breathtaking coastal scenery on this full-day tour."
+                price={85}
+              />
 
             </div>
           </div>
