@@ -13,7 +13,7 @@ const roboto = Roboto({
 const PriceCard: React.FC = () => {
   return (
     <div
-      className={`${roboto.className} bg-[#f7faff] rounded-2xl p-7 w-[370px] shadow-md relative text-gray-800`}
+      className={`${roboto.className} bg-[#f7faff] rounded-2xl p-6 sm:p-7 w-full max-w-[370px] shadow-md relative text-gray-800`}
     >
       {/* Badge -10% */}
       <div className="absolute top-4 right-4 bg-red-500 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-sm">
@@ -25,10 +25,10 @@ const PriceCard: React.FC = () => {
 
       {/* Prix */}
       <p className="text-gray-600 text-sm font-medium mb-2">Starting From</p>
-      <div className="flex items-baseline mb-4">
-        <span className="text-gray-400 line-through text-lg mr-2">$899</span>
+      <div className="flex flex-wrap items-baseline mb-4 gap-x-1">
+        <span className="text-gray-400 line-through text-lg">$899</span>
         <span className="text-3xl font-bold text-gray-900">$800</span>
-        <span className="text-gray-600 ml-1 text-base">/per person</span>
+        <span className="text-gray-600 text-sm sm:text-base">/per person</span>
       </div>
 
       {/* Garanties */}
@@ -45,23 +45,23 @@ const PriceCard: React.FC = () => {
 
       {/* Boutons */}
       <div className="space-y-3">
-        {/* Bouton principal - dégradé plus doux */}
-            <button
-            className="w-full bg-[#ff6d50] 
+        {/* Bouton principal */}
+        <button
+          className="w-full bg-[#ff6d50] 
             text-white font-semibold py-2.5 rounded-lg shadow-md 
             hover:shadow-lg hover:scale-[1.02] active:scale-[0.99]
-            transition-all duration-200 ease-in-out flex items-center justify-center gap-2 text-sm">
-            Check Availability <span className="text-base">↗</span>
-            </button>
+            transition-all duration-200 ease-in-out flex items-center justify-center gap-2 text-sm"
+        >
+          Check Availability <span className="text-base">↗</span>
+        </button>
 
-
-        {/* Bouton WhatsApp avec ton image */}
+        {/* Bouton WhatsApp */}
         <button
           className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2.5 rounded-lg 
           transition flex items-center justify-center gap-2 text-sm shadow-sm"
         >
           <Image
-            src="/images/Watsupp_icon.png" // place ton image ici dans /public
+            src="/images/Watsupp_icon.png"
             alt="WhatsApp"
             width={18}
             height={18}
