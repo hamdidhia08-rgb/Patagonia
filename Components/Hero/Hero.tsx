@@ -25,8 +25,9 @@ const hand = Just_Another_Hand({
 export default function HeroSlider() {
 const slides = [
   { id: 1, desktopImg: "/images/pexels-francesco.jpg", mobileImg: "/images/pexels.jpg" },
-  { id: 2, desktopImg: "/images/bg/h3-hero-bg-5.jpg", mobileImg: "/images/pexels2.jpg" },
-  { id: 3, desktopImg: "/images/bg/h3-hero-bg-4.jpg", mobileImg: "/images/pexels3.jpg" },
+  { id: 2, desktopImg: "/images/Slide.jpg", mobileImg: "/images/pexels2.jpg" },
+  { id: 3, desktopImg: "/images/pexels-huseyin-karaca-2157217185-34970710.jpg", mobileImg: "/images/pexels-emrecan-2079666.jpg" },
+
 ];
 
 
@@ -45,7 +46,7 @@ const slides = [
   }, []);
 
   return (
-<section className="relative w-full h-[70vh] sm:h-[75vh] md:h-[96.5vh] overflow-hidden">
+<section className="relative w-full h-[75vh] sm:h-[75vh] md:h-[96.5vh] overflow-hidden">
 <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
 
       {/* NAVBAR */}

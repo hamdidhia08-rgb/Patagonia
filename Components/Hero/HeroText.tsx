@@ -28,7 +28,7 @@ export default function HeroText({
     {/* Texte principal ultra-compact */}
     <p
       data-aos="fade-up"
-      className="font-hand text-orange-400 text-3xl md:text-5xl leading-[1.1] mb-0"
+      className="font-hand text-orange-400 text-4xl md:text-5xl leading-[1.1] mb-0"
     >
       Discover Turkey
     </p>
