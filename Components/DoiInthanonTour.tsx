@@ -36,12 +36,15 @@ export default function DoiInthanonTour() {
 
   return (
     <section className={`${roboto.variable} font-sans w-full max-w-7xl mx-auto px-5 py-10`}>
-         {/* Breadcrumb */}
-      <div className="flex items-center text-sm text-gray-500 gap-2 mb-3">
-        <Link href="/" className="hover:underline">Home</Link>
-        <span>/</span>
-        <span>Hagia Sophia & Blue Mosque Walking Tour</span>
-      </div>
+    {/* Breadcrumb */}
+<div className="flex flex-wrap items-center text-sm text-gray-500 gap-1 sm:gap-2 mb-3">
+  <Link href="/" className="hover:underline whitespace-nowrap">Home</Link>
+  <span className="whitespace-nowrap">/</span>
+  <span className="truncate sm:whitespace-normal">
+    Hagia Sophia & Blue Mosque Walking Tour
+  </span>
+</div>
+
 
     <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:gap-0">
   <div>
