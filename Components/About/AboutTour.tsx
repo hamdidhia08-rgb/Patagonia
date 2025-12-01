@@ -11,22 +11,23 @@ const roboto = Roboto({
 
 const AboutTour: React.FC = () => {
   return (
-    <div className={`${roboto.className} flex flex-col gap-6 pt-5` }>
+    <div className={`${roboto.className} flex flex-col gap-6 pt-5`}>
       {/* Title & Description */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-900">About Tour Package</h2>
-        <p className="text-gray-600 mt-3 leading-relaxed">
-         Istanbul, the city where East meets West, and its surrounding region
-        offer a perfect blend of history, culture, and vibrant life.
-        Whether you’re exploring iconic landmarks like Hagia Sophia and the Blue Mosque,
-        savoring traditional Turkish cuisine, or cruising along the Bosphorus,
-        this region has something for every traveler.
-
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+          About Tour Package
+        </h2>
+        <p className="text-gray-600 mt-3 leading-relaxed text-sm sm:text-base">
+          Istanbul, the city where East meets West, and its surrounding region
+          offer a perfect blend of history, culture, and vibrant life. Whether
+          you’re exploring iconic landmarks like Hagia Sophia and the Blue
+          Mosque, savoring traditional Turkish cuisine, or cruising along the
+          Bosphorus, this region has something for every traveler.
         </p>
       </div>
 
       {/* Info Box */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-y-7 bg-white rounded-2xl border border-gray-200 p-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-6 sm:gap-x-6 sm:gap-y-7 bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
         <InfoItem
           icon="/images/icons/svgviewer-output.svg"
           label="Accomodation"
@@ -96,8 +97,8 @@ const InfoItem: React.FC<InfoItemProps> = ({ icon, label, value }) => (
     </div>
 
     <div className="flex flex-col items-start">
-      <span className="text-gray-700 text-sm">{label}</span>
-      <p className="font-medium text-gray-900 text-base">{value}</p>
+      <span className="text-gray-700 text-xs sm:text-sm">{label}</span>
+      <p className="font-medium text-gray-900 text-sm sm:text-base">{value}</p>
     </div>
   </div>
 );

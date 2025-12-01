@@ -25,20 +25,20 @@ const Servie_detaille = () => {
       <KeyFeaturesBar/>
       <WhatsappButtons/>
       <ScrollToTopButton/>
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
         {/* Partie gauche (2/3) */}
         <div className="lg:col-span-2">
-            <AboutTour />
+          <AboutTour />
         </div>
 
         {/* Partie droite (1/3) */}
-        <div className="flex justify-center lg:justify-end">
-            {/* On force PriceCard à prendre toute la hauteur de AboutTour */}
-            <div className="h-full w-full max-w-[370px]">
+        <div className="flex justify-center lg:justify-end mt-6 lg:mt-0">
+          <div className="w-full max-w-[370px]">
             <PriceCard />
-            </div>
+          </div>
         </div>
-        </div>
+      </div>
+
             <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-3 gap-10">
         {/* Partie gauche (2/3) */}
         <div className="lg:col-span-2">
