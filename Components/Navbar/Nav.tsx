@@ -17,8 +17,8 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`w-full bg-white shadow-sm py-4 ${inter.className}`}>
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+     <header className={`w-full bg-white shadow-sm py-4 ${inter.className} relative z-50`}>
+  <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           {/* LOGO */}
           <Link href="/" className="flex items-center -mt-2">
             <Image

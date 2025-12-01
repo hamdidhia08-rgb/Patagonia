@@ -4,13 +4,18 @@ import { CheckCircle, Info } from "lucide-react";
 import { Roboto } from "next/font/google";
 import Image from "next/image";
 import React from "react";
-
+import { useRouter } from "next/navigation"; 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
 
 const PriceCard: React.FC = () => {
+    const router = useRouter(); 
+
+  const handleCheckAvailability = () => {
+    router.push("/checkout"); 
+  };
   return (
     <div
       className={`${roboto.className} bg-[#f7faff] rounded-2xl p-6 sm:p-7 w-full max-w-[370px] shadow-md relative text-gray-800`}
@@ -51,6 +56,7 @@ const PriceCard: React.FC = () => {
             text-white font-semibold py-2.5 rounded-lg shadow-md 
             hover:shadow-lg hover:scale-[1.02] active:scale-[0.99]
             transition-all duration-200 ease-in-out flex items-center justify-center gap-2 text-sm"
+            onClick={handleCheckAvailability}
         >
           Check Availability <span className="text-base">↗</span>
         </button>
