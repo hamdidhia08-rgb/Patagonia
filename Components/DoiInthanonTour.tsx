@@ -120,48 +120,52 @@ export default function DoiInthanonTour() {
 
 
       {/* Modal */}
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-          onClick={closeModal} // click en dehors ferme le modal
-        >
-          <div
-            className="relative max-w-4xl w-full mx-4"
-            onClick={(e) => e.stopPropagation()} // empêcher la fermeture si on clique sur le modal
-          >
-            {/* Bouton close design */}
-            <button
-              className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white rounded-full p-2 transition"
-              onClick={closeModal}
-            >
-              <X size={24} />
-            </button>
+{isModalOpen && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+    onClick={closeModal}
+  >
+    <div
+      className="relative max-w-4xl w-full mx-4"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Bouton close */}
+      <button
+        className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white rounded-full p-3 sm:p-2 transition"
+        onClick={closeModal}
+      >
+        <X size={24} />
+      </button>
 
-            <Image
-              src={images[currentIndex]}
-              alt={`Modal ${currentIndex}`}
-              width={1200}
-              height={700}
-              className="w-full h-[500px] sm:h-[600px] md:h-[700px] object-cover rounded-xl"
-            />
+      {/* Image fixe avec même taille pour toutes */}
+      <div className="w-full h-[500px] sm:h-[600px] md:h-[700px] rounded-xl overflow-hidden">
+        <Image
+          src={images[currentIndex]}
+          alt={`Modal ${currentIndex}`}
+          width={1200}  // width fixe pour Next.js Image
+          height={700}  // height fixe pour Next.js Image
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-            {/* Navigation */}
-            <button
-              className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-white bg-black/30 rounded-r-full hover:bg-black/50 transition"
-              onClick={prevImage}
-            >
-              <ChevronLeft size={30} />
-            </button>
+      {/* Navigation */}
+      <button
+        className="absolute left-0 top-1/2 -translate-y-1/2 p-3 sm:p-2 text-white bg-black/30 rounded-r-full hover:bg-black/50 transition"
+        onClick={prevImage}
+      >
+        <ChevronLeft size={30} />
+      </button>
 
-            <button
-              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-white bg-black/30 rounded-l-full hover:bg-black/50 transition"
-              onClick={nextImage}
-            >
-              <ChevronRight size={30} />
-            </button>
-          </div>
-        </div>
-      )}
+      <button
+        className="absolute right-0 top-1/2 -translate-y-1/2 p-3 sm:p-2 text-white bg-black/30 rounded-l-full hover:bg-black/50 transition"
+        onClick={nextImage}
+      >
+        <ChevronRight size={30} />
+      </button>
+    </div>
+  </div>
+)}
+
     </section>
   );
 }
