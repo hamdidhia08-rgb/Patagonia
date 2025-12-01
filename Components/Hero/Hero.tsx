@@ -23,11 +23,12 @@ const hand = Just_Another_Hand({
 });
 
 export default function HeroSlider() {
-  const slides = [
-    { id: 1, img: "/images/bg/h3-hero-bg-3.jpg" },
-    { id: 2, img: "/images/bg/h3-hero-bg-5.jpg" },
-    { id: 3, img: "/images/bg/h3-hero-bg-4.jpg" },
-  ];
+const slides = [
+  { id: 1, desktopImg: "/images/bg/h3-hero-bg-3.jpg", mobileImg: "/images/pexels.jpg" },
+  { id: 2, desktopImg: "/images/bg/h3-hero-bg-5.jpg", mobileImg: "/images/pexels.jpg" },
+  { id: 3, desktopImg: "/images/bg/h3-hero-bg-4.jpg", mobileImg: "/images/pexels.jpg" },
+];
+
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -122,22 +123,39 @@ export default function HeroSlider() {
       </div>
 
       {/* Slides */}
-      {slides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-[1200ms] ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}
-          data-aos="fade-in"
-        >
-          <Image
-            src={slide.img}
-            alt={`Slide ${slide.id}`}
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center animate-zoomHero"
-          />
-        </div>
-      ))}
+     {slides.map((slide, index) => (
+      <div
+        key={slide.id}
+        className={`absolute inset-0 w-full h-full transition-opacity duration-[1200ms] ${
+          index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+        }`}
+        data-aos="fade-in"
+      >
+        {/* Desktop */}
+        <Image
+          src={slide.desktopImg}
+          alt={`Slide ${slide.id}`}
+          fill
+          priority
+          sizes="100vw"
+          className="hidden md:block object-cover object-center animate-zoomHero"
+          quality={100} // <-- garantie d'une image nette
+        />
+
+        {/* Mobile */}
+        <Image
+          src={slide.mobileImg}
+          alt={`Slide ${slide.id} mobile`}
+          fill
+          priority
+          sizes="100vw"
+          className="block md:hidden object-cover object-center animate-zoomHero"
+          quality={100} // <-- garantie d'une image nette
+        />
+      </div>
+    ))}
+
+
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/35 to-transparent z-20"></div>
@@ -159,17 +177,18 @@ export default function HeroSlider() {
         </button>
       </div>
 
-      {/* Bottom Shape */}
-      <div className="absolute bottom-0 w-full z-20">
-        <Image
-          src="/images/dhia.svg"
-          alt="Bottom shape"
-          width={1920}
-          height={200}
-          className="w-full object-cover"
-          priority
-        />
-      </div>
+    {/* Bottom Shape */}
+    <div className="absolute bottom-0 w-full z-20 hidden md:block">
+      <Image
+        src="/images/dhia.svg"
+        alt="Bottom shape"
+        width={1920}
+        height={200}
+        className="w-full object-cover"
+        priority
+      />
+    </div>
+
     </section>
   );
 }
