@@ -15,6 +15,8 @@ import DoiInthanonTour from "@/Components/DoiInthanonTour";
 import CustomerReviews from "@/Components/CustomerReviews";
 import WhatsappButtons from "@/Components/WhatsappButtons";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
+import MapTour from "@/Components/Map/MapTour";
+import Footer from "@/Components/Footer/Footer";
 
 const Servie_detaille = () => {
   return (
@@ -46,7 +48,9 @@ const Servie_detaille = () => {
             <TourHighlights/>
             <TourItinerary/>
             <CustomerReviews/>
-          
+          <div className="lg:col-span-2">
+            <MapTour/>
+          </div>
         </div>
 
         {/* Partie droite (1/3) */}
@@ -57,6 +61,7 @@ const Servie_detaille = () => {
             </div>
         </div>
         </div>
+        <Footer/>
     </div>
   );
 };

@@ -24,7 +24,7 @@ function Hero_payment() {
           className="object-cover object-center transition-none"
           priority
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}

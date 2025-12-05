@@ -9,9 +9,11 @@ import BlogCard2 from '@/Components/Blog/BlogCard';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
 import WhatsappButtons from "@/Components/WhatsappButtons";
+import ScrollingBanner from '@/Components/ScrollingBanner';
 const Blog = () => {
   return (
     <div className="bg-gray-100 min-h-screen"> {/* Fond gris pour toute la page */}
+    <ScrollingBanner/>
       <TopBar />
       <Navbar/>
       <Hero1 />
