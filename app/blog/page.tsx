@@ -1,4 +1,4 @@
-import Hero1 from '@/Components/Hero/Hero1';
+import Hero1 from '@/Components/Hero/Hero2';
 import Navbar from '@/Components/Navbar/Nav';
 import TopBar from '@/Components/TopBar/TopBar';
 import React from 'react';
@@ -9,12 +9,41 @@ import BlogCard2 from '@/Components/Blog/BlogCard';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
 import WhatsappButtons from "@/Components/WhatsappButtons";
+import { Inter } from "next/font/google";
+import { Search } from "lucide-react";
+
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const Blog = () => {
   return (
     <div className="bg-gray-100 min-h-screen"> {/* Fond gris pour toute la page */}
       <TopBar />
       <Navbar/>
       <Hero1 />
+<div className={`${inter.className} w-full  py-6 `}>
+  <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+
+    {/* Titre à gauche */}
+    <h2 className="text-2xl md:text-2.5xl font-semibold text-gray-700">
+      Latest Featured Articles
+    </h2>
+
+    {/* Search Input */}
+    <div className="relative w-full md:w-64">
+      <input
+        type="text"
+        placeholder="Search..."
+        className="bg-white w-full rounded-md border border-gray-300 py-2 pl-4 pr-10 text-sm focus:ring-2 focus:ring-orange-400 focus:outline-none"
+      />
+      
+      <Search
+        className="bg-white absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+        size={18}
+      />
+    </div>
+
+  </div>
+</div>
+
 
       <div className="max-w-7xl mx-auto px-4 py-10">
 
