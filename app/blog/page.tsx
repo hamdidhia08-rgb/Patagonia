@@ -9,31 +9,22 @@ import BlogCard2 from '@/Components/Blog/BlogCard';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
 import WhatsappButtons from "@/Components/WhatsappButtons";
-import ScrollingBanner from '@/Components/ScrollingBanner';
 const Blog = () => {
   return (
     <div className="bg-gray-100 min-h-screen"> {/* Fond gris pour toute la page */}
-    <ScrollingBanner/>
       <TopBar />
       <Navbar/>
       <Hero1 />
 
-      {/* Container principal sous le Hero */}
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        {/* Colonne principale pour les blogs */}
-        <div className="lg:col-span-2 space-y-6">
-        <BlogCard2/>
+      <div className="max-w-7xl mx-auto px-4 py-10">
 
-        </div>
-
-        {/* Colonne droite */}
-        <div className="space-y-6">
-            <AboutBlog/>
-            <MostPopular/>
+        {/* Section blogs */}
+        <div className="w-full">
+          <BlogCard2 />
         </div>
 
       </div>
+
           {/* --- Pagination pro --- */}
 <div className="mt-8 flex justify-center items-center space-x-2 text-sm ">
   {/* Bouton précédent */}

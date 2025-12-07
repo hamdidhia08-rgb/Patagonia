@@ -7,6 +7,8 @@ import AdditionalInformationForm from '@/Components/checkout/AdditionalInformati
 import PaymentSection from '@/Components/checkout/Payment';
 import Hero_payment from '@/Components/Hero/Hero_payment';
 import Stepper from '@/Components/checkout/Stepper';
+import WhatsappButtons from '@/Components/WhatsappButtons';
+import ScrollToTopButton from '@/Components/ScrollToTopButton';
 
 export default function CheckoutPage() {
   return (
@@ -41,6 +43,8 @@ export default function CheckoutPage() {
           </aside>
         </div>
       </main>
+       <WhatsappButtons/>
+       <ScrollToTopButton/>
     </div>
   );
 }
