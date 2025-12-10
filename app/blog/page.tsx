@@ -1,16 +1,13 @@
-import Hero1 from '@/Components/Hero/Hero2';
 import Navbar from '@/Components/Navbar/Nav';
 import TopBar from '@/Components/TopBar/TopBar';
 import React from 'react';
-import AboutBlog from '@/Components/Blog/AboutBlog';
-import MostPopular from '@/Components/Blog/MostPopular';
-import BlogCard from '@/Components/Blog/BlogCard';
 import BlogCard2 from '@/Components/Blog/BlogCard';
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
 import WhatsappButtons from "@/Components/WhatsappButtons";
 import { Inter } from "next/font/google";
 import { Search } from "lucide-react";
+import Hero_blog from '@/Components/Blog/Hero';
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const Blog = () => {
@@ -18,7 +15,7 @@ const Blog = () => {
     <div className="bg-gray-100 min-h-screen"> {/* Fond gris pour toute la page */}
       <TopBar />
       <Navbar/>
-      <Hero1 />
+      <Hero_blog/>
 <div className={`${inter.className} w-full  py-6 `}>
   <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
 
