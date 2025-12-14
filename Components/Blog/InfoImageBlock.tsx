@@ -8,7 +8,7 @@ export default function InfoImageBlock() {
       {/* Image */}
         <div className="w-full h-full flex items-center py-12">
         <img
-            src="/images/izmir.jpg"
+            src="/images/izmir2.jpg"
             alt="Tips for Building Future"
             className="w-full h-full object-cover rounded-2xl"
         />

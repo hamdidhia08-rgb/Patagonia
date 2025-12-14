@@ -1,12 +1,12 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import TourCard from "@/Components/Card/TourCard";
 import FiltersSidebar from "@/Components/Filter/FiltersSidebar";
 import HeroFilter from "@/Components/Hero/HeroFilter";
 import Navbar from "@/Components/Navbar/Nav";
 import TopBar from "@/Components/TopBar/TopBar";
 import MobileFiltersDrawer from "@/Components/Filter/MobileFiltersDrawer";
-
+import  {MapPin} from "lucide-react";
 import { Inter } from "next/font/google";
 import WhatsappButtons from "@/Components/WhatsappButtons";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
@@ -17,6 +17,7 @@ const inter = Inter({
 });
 
 export default function ToursPage() {
+  const router = useRouter();
   return (
     <div className="bg-[#FBFBFB]">
       <TopBar />
@@ -26,13 +27,27 @@ export default function ToursPage() {
       <WhatsappButtons/>
       <ScrollToTopButton/>
       <div className="w-full bg-[#FBFBFB] max-w-[1400px] mx-auto px-0 py-10">
-
+        
         {/* FLEX responsive: colonne en mobile, ligne en desktop */}
         <div className="flex gap-10 flex-col md:flex-row">
 
           {/* LEFT — Filters → caché en mobile */}
           <div className="w-[320px] flex-shrink-0 hidden md:block">
             <FiltersSidebar />
+              {/* --- Section Map Image --- */}
+            <div className="w-full max-w-[1400px] mx-auto px-0 py-10">
+              <div className="relative w-full">
+                <img
+                  src="/images/maping.png" // ton image de map
+                  alt="Map"
+                  className="w-full border border-gray-200 rounded-lg"
+                />
+                <button onClick={() => router.push("/maptour")} className="absolute text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 bg-orange-500 hover:bg-orange-600 border border-orange-300 px-6 py-2 rounded-[8px] shadow-md transition">
+                  <MapPin className="w-5 h-5 text-white" />
+                  View on Map
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* RIGHT — List of tours */}
