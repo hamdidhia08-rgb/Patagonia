@@ -16,13 +16,15 @@ const Blog = () => {
       <TopBar />
       <Navbar/>
       <Hero_blog/>
-<div className={`${inter.className} w-full  py-6 `}>
+<div className={`${inter.className} w-full mt-7 py-8`}>
   <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
 
     {/* Titre à gauche */}
-    <h2 className="text-2xl md:text-2.5xl font-semibold text-gray-700">
-      Latest Featured Articles
+    <h2 className="text-3xl md:text-3xl font-bold text-gray-800">
+      Latest Featured{" "}
+      <span className="text-orange-600">Articles</span>
     </h2>
+
 
     {/* Search Input */}
     <div className="relative w-full md:w-64">

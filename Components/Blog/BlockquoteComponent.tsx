@@ -20,11 +20,11 @@ const BlockquoteComponent: React.FC = () => {
                 flex 
                 max-w-4xl mx-auto
                 relative 
-                bg-[#ecf3ff] 
+                bg-orange-50
                 p-6 
                 sm:p-8 
                 border-l-4 
-                border-[#560ce3] 
+                border-orange-600
                 shadow-sm 
             ">
                 
@@ -33,7 +33,7 @@ const BlockquoteComponent: React.FC = () => {
                     text-base 
                     sm:text-lg 
                     font-sm 
-                    text-black
+                    text-gray-800
                     pr-8 
                     leading-relaxed
                     italic
@@ -47,7 +47,7 @@ const BlockquoteComponent: React.FC = () => {
                     absolute 
                     bottom-4
                     right-4 
-                    text-[#560ce3] 
+                    text-orange-600
                     opacity-80
                 ">
                     <Quote size={32} strokeWidth={2.5} />

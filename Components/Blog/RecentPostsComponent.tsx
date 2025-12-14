@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Calendar } from "lucide-react"; // Pour l'icône de date
+import { Calendar } from "lucide-react"; 
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
@@ -42,43 +42,41 @@ interface PostItemProps {
 }
 
 const PostItem: React.FC<PostItemProps> = ({ title, date, imageSrc }) => (
-    <div className="flex items-start gap-4 cursor-pointer group">
-        
-        {/* Image du post */}
-        {/* Note: Dans un environnement réel Next.js, vous devez configurer le domaine de l'image
-           et définir les propriétés `width` et `height` ou utiliser `fill` si non connu. */}
-        <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
-             {/* Ceci est un placeholder, remplacez-le par votre composant Image si vous l'utilisez */}
-            <Image
-                src={imageSrc}
-                alt={title}
-                width={64} // 16 * 4 = 64px
-                height={64} // 16 * 4 = 64px
-                className="object-cover w-full h-full transition duration-300 group-hover:scale-105"
-            />
-        </div>
-
-        {/* Contenu du post */}
-        <div className="flex flex-col pt-0.5">
-            <h3 className="
-                text-base 
-                font-semibold 
-                text-gray-800 
-                leading-snug 
-                group-hover:text-orange-600 
-                transition duration-150
-            ">
-                {title}
-            </h3>
-            
-            {/* Date */}
-            <div className="flex items-center gap-1 mt-1 text-sm font-medium text-gray-500">
-                <Calendar size={16} className="text-[#ff6d50]" />
-                <span className="text-gray-500 font-normal">{date}</span>
-            </div>
-        </div>
+  <div className="flex items-center gap-4 cursor-pointer group py-4">
+    
+    {/* Image */}
+    <div className="flex-shrink-0 w-24 h-16 rounded-lg overflow-hidden">
+      <Image
+        src={imageSrc}
+        alt={title}
+        width={96}
+        height={64}
+        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+      />
     </div>
+
+    {/* Contenu */}
+    <div className="flex flex-col justify-center">
+      <h3 className="
+        text-[15px]
+        font-semibold
+        text-gray-800
+        leading-snug
+        group-hover:text-orange-600
+        transition-colors
+      ">
+        {title}
+      </h3>
+
+      {/* Date */}
+      <div className="flex items-center gap-1 mt-1 text-sm text-gray-500">
+        <Calendar size={15} className="text-[#ff6d50]" />
+        <span className="font-normal">{date}</span>
+      </div>
+    </div>
+  </div>
 );
+
 
 
 const RecentPostsComponent: React.FC = () => {
@@ -99,7 +97,7 @@ const RecentPostsComponent: React.FC = () => {
       </h2>
 
       {/* Liste des articles récents */}
-      <div className="space-y-6">
+<div className="divide-y divide-gray-100">
         {recentPosts.map((post, index) => (
           <PostItem 
             key={index}
