@@ -52,7 +52,7 @@ export default function Navbar() {
 
             {/* Cart Icon + Badge */}
             <Link
-              href="/cart"
+              href="/checkout"
               className="relative w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:border-orange-400 hover:text-orange-500 transition"
             >
               <ShoppingCart size={20} />
