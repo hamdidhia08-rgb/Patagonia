@@ -1,7 +1,12 @@
 // app/page.jsx (ou page.js)
 "use client";
 
-import MapComponent from '@/Components/Maping/Maping';
+import dynamic from "next/dynamic";
+
+const MapComponent = dynamic(
+  () => import("@/Components/Maping/Maping"),
+  { ssr: false }
+);
 import Navbar from '@/Components/Navbar/Nav';
 import TopBar from '@/Components/TopBar/TopBar';
 
