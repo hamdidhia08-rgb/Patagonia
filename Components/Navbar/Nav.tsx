@@ -1,26 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ShoppingCart, User, Heart, Menu } from "lucide-react"; // Ajout de Menu
+import dynamic from "next/dynamic";
+import { ShoppingCart, User, Heart, Menu } from "lucide-react";
 import { Inter } from "next/font/google";
-import MobileDrawer from "./MobileDrawer"; // Import du drawer
+
+/* Lazy load MobileDrawer (gros gain perf) */
+const MobileDrawer = dynamic(() => import("./MobileDrawer"), {
+  ssr: false,
+});
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-export default function Navbar() {
+function Navbar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const openDrawer = useCallback(() => setDrawerOpen(true), []);
+  const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
   return (
     <>
-     <header className={`w-full bg-white shadow-sm py-4 ${inter.className} relative z-50`}>
-  <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <header
+        className={`w-full bg-white shadow-sm py-4 ${inter.className} relative z-50`}
+      >
+        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           {/* LOGO */}
-          <Link href="/" className="flex items-center -mt-2">
+          <Link href="/" prefetch className="flex items-center -mt-2">
             <Image
               src="/images/logoi.png"
               alt="Patagonia Logo"
@@ -32,27 +42,43 @@ export default function Navbar() {
 
           {/* MENU DESKTOP */}
           <nav className="hidden md:flex items-center gap-7 text-black font-medium">
-            <Link href="/" className="flex items-center gap-1 hover:text-orange-400 transition">Home</Link>
-            <Link href="/Service" className="flex items-center gap-1 hover:text-orange-400 transition">Services</Link>
-            <Link href="/tours" className="flex items-center gap-1 hover:text-orange-400 transition">Tours</Link>
-            <Link href="/blog" className="flex items-center gap-1 hover:text-orange-400 transition">Blogs</Link>
-            <Link href="/Airport_service" className="flex items-center gap-1 hover:text-orange-400 transition">Airport service</Link>
-            <Link href="/contact" className="flex items-center gap-1 hover:text-orange-400 transition">Contact</Link>
+            <Link href="/" prefetch className="hover:text-orange-400 transition">
+              Home
+            </Link>
+            <Link href="/Service" prefetch className="hover:text-orange-400 transition">
+              Services
+            </Link>
+            <Link href="/tours" prefetch className="hover:text-orange-400 transition">
+              Travel & Tours
+            </Link>
+            <Link href="/blog" prefetch className="hover:text-orange-400 transition">
+              Blogs
+            </Link>
+            <Link
+              href="/Airport_service"
+              prefetch
+              className="hover:text-orange-400 transition"
+            >
+              Airport service
+            </Link>
+            <Link href="/contact" prefetch className="hover:text-orange-400 transition">
+              Contact
+            </Link>
           </nav>
 
           {/* RIGHT ICONS */}
           <div className="flex items-center gap-4">
-            {/* Heart Icon */}
             <Link
               href="/favorites"
+              prefetch={false}
               className="w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:border-orange-400 hover:text-orange-500 transition"
             >
               <Heart size={20} />
             </Link>
 
-            {/* Cart Icon + Badge */}
             <Link
               href="/checkout"
+              prefetch={false}
               className="relative w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:border-orange-400 hover:text-orange-500 transition"
             >
               <ShoppingCart size={20} />
@@ -61,18 +87,19 @@ export default function Navbar() {
               </span>
             </Link>
 
-            {/* LOGIN Button */}
             <Link
               href="/Login"
+              prefetch={false}
               className="hidden ml-5 sm:flex items-center gap-2 bg-orange-500 text-white px-4 py-[6px] rounded-md font-medium shadow hover:bg-orange-600 transition"
             >
-              <User size={18} className="text-white" /> Login
+              <User size={18} /> Login
             </Link>
 
-            {/* MENU ICON MOBILE */}
+            {/* MOBILE MENU */}
             <button
-              onClick={() => setDrawerOpen(true)}
+              onClick={openDrawer}
               className="md:hidden w-10 h-10 rounded-full border border-black/20 flex items-center justify-center hover:border-orange-400 hover:text-orange-500 transition"
+              aria-label="Open menu"
             >
               <Menu size={20} />
             </button>
@@ -81,7 +108,9 @@ export default function Navbar() {
       </header>
 
       {/* MOBILE DRAWER */}
-      <MobileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
+      <MobileDrawer open={drawerOpen} onClose={closeDrawer} />
     </>
   );
 }
+
+export default memo(Navbar);
