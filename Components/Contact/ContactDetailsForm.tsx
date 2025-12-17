@@ -8,6 +8,15 @@ const inter = Inter({ subsets: ["latin"] });
 /* ---------------- TYPES ---------------- */
 type TextField = "firstName" | "lastName" | "phone" | "email";
 
+type FormData = {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  message: string;
+  newsletter: boolean;
+};
+
 interface InputFieldProps {
   label: string;
   id: TextField;
@@ -50,7 +59,7 @@ const InputField: React.FC<InputFieldProps> = ({
 
 /* ------------ MAIN FORM ------------ */
 const ContactDetailsForm2: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     phone: "",
@@ -63,9 +72,10 @@ const ContactDetailsForm2: React.FC = () => {
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
-  const handleChange = (
-    field: keyof typeof formData,
-    value: string | boolean
+  /* ✅ FIX TYPE-SAFE */
+  const handleChange = <K extends keyof FormData>(
+    field: K,
+    value: FormData[K]
   ) => {
     setFormData((prev) => ({
       ...prev,
@@ -203,8 +213,12 @@ const ContactDetailsForm2: React.FC = () => {
       </div>
 
       {/* STATUS */}
-      {success && <p className="mt-4 text-green-600 text-sm">{success}</p>}
-      {error && <p className="mt-4 text-red-600 text-sm">{error}</p>}
+      {success && (
+        <p className="mt-4 text-green-600 text-sm">{success}</p>
+      )}
+      {error && (
+        <p className="mt-4 text-red-600 text-sm">{error}</p>
+      )}
 
       {/* SUBMIT */}
       <div className="mt-8">
@@ -213,7 +227,8 @@ const ContactDetailsForm2: React.FC = () => {
           disabled={loading}
           className="w-full sm:w-auto rounded-md bg-orange-600 px-6 py-3
                      text-sm font-semibold text-white shadow-sm
-                     hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                     hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-red-500
+                     disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {loading ? "Sending..." : "Submit"}
         </button>

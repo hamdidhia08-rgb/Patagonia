@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link href="/Service" className="flex items-center gap-1 hover:text-orange-400 transition">Services</Link>
             <Link href="/tours" className="flex items-center gap-1 hover:text-orange-400 transition">Tours</Link>
             <Link href="/blog" className="flex items-center gap-1 hover:text-orange-400 transition">Blogs</Link>
-            <Link href="/about" className="flex items-center gap-1 hover:text-orange-400 transition">About</Link>
+            <Link href="/Airport_service" className="flex items-center gap-1 hover:text-orange-400 transition">Airport service</Link>
             <Link href="/contact" className="flex items-center gap-1 hover:text-orange-400 transition">Contact</Link>
           </nav>
 
@@ -63,7 +63,7 @@ export default function Navbar() {
 
             {/* LOGIN Button */}
             <Link
-              href="/login"
+              href="/Login"
               className="hidden ml-5 sm:flex items-center gap-2 bg-orange-500 text-white px-4 py-[6px] rounded-md font-medium shadow hover:bg-orange-600 transition"
             >
               <User size={18} className="text-white" /> Login

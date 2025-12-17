@@ -60,7 +60,7 @@ const slides = [
             <Link href="/Service" className="hover:text-orange-400 transition">Services</Link>
             <Link href="/tours" className="hover:text-orange-400 transition">Tours</Link>
             <Link href="/blog" className="hover:text-orange-400 transition">Blogs</Link>
-            <Link href="/about" className="hover:text-orange-400 transition">About</Link>
+            <Link href="/Airport_service" className="hover:text-orange-400 transition">Airport service</Link>
             <Link href="/contact" className="hover:text-orange-400 transition">Contact</Link>
           </ul>
 

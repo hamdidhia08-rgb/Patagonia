@@ -1,42 +1,33 @@
 "use client";
 
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 
-const customIcon = L.icon({
-  iconUrl: "/images/10863973.png",  // ton icône ronde
-  iconSize: [40, 40],               // largeur et hauteur du cercle
-  iconAnchor: [20, 40],             // point de la map qui correspond au bas du marker
-  popupAnchor: [0, -40],            // position du popup par rapport au marker
-});
-
-const MapCard: React.FC = () => {
-  const position: [number, number] = [41.0082, 28.9784]; // Istanbul
-
+const MapCard = () => {
   return (
-    <div className="max-w-md w-full mt-8 h-full p-6 bg-white rounded-lg shadow-sm flex flex-col">
-      <h2 className="text-xl font-bold text-gray-900 mb-2">Our Location</h2>
-      <div className="flex-1">
-        <MapContainer
-          // @ts-ignore
-          center={position}
-          // @ts-ignore
-          zoom={13}
-          scrollWheelZoom={false}
-          className="w-full h-64 rounded-lg"
-        >
-          <TileLayer
-            // @ts-ignore
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {/* @ts-ignore */}
-          <Marker position={position} icon={customIcon}>
-            <Popup>We are here!</Popup>
-          </Marker>
-        </MapContainer>
+    <div className="max-w-md w-full mt-8 p-6 bg-white rounded-lg shadow-sm">
+      <h2 className="text-xl font-bold text-gray-900 mb-4">
+        Our Location
+      </h2>
+
+      {/* Map simple */}
+      <div className="w-full h-64 rounded-lg overflow-hidden">
+        <iframe
+          title="Istanbul Map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=28.90%2C40.95%2C29.10%2C41.10&layer=mapnik"
+          className="w-full h-full border-0"
+          loading="lazy"
+        />
       </div>
+
+      {/* Lien */}
+      <a
+        href="https://www.openstreetmap.org/#map=12/41.0082/28.9784"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block mt-3 text-sm text-blue-600 hover:underline"
+      >
+        View on map
+      </a>
     </div>
   );
 };
