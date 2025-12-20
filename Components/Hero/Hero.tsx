@@ -24,9 +24,9 @@ const hand = Just_Another_Hand({
 
 export default function HeroSlider() {
 const slides = [
-  { id: 1, desktopImg: "/images/pexels-francesco.jpg", mobileImg: "/images/pexels.jpg" },
+  { id: 3, desktopImg: "/images/slide44.jpg", mobileImg: "/images/pexels.jpg" },
   { id: 2, desktopImg: "/images/Slide.jpg", mobileImg: "/images/pexels2.jpg" },
-  { id: 3, desktopImg: "/images/pexels-huseyin-karaca-2157217185-34970710.jpg", mobileImg: "/images/pexels-emrecan-2079666.jpg" },
+  { id: 1, desktopImg: "/images/pexels-huseyin-karaca-2157217185-34970710.jpg", mobileImg: "/images/pexels-emrecan-2079666.jpg" },
 
 ];
 
@@ -57,8 +57,8 @@ const slides = [
           {/* Menu Desktop avec LINK */}
           <ul className="hidden md:flex items-center gap-8 text-white font-medium text-lg">
             <Link href="/" className="hover:text-orange-400 transition">Home</Link>
+            <Link href="/tours" className="hover:text-orange-400 transition">Travel & Tours</Link>
             <Link href="/Service" className="hover:text-orange-400 transition">Services</Link>
-            <Link href="/tours" className="hover:text-orange-400 transition">Tours</Link>
             <Link href="/blog" className="hover:text-orange-400 transition">Blogs</Link>
             <Link href="/Airport_service" className="hover:text-orange-400 transition">Airport service</Link>
             <Link href="/contact" className="hover:text-orange-400 transition">Contact</Link>

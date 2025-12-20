@@ -45,11 +45,11 @@ function Navbar() {
             <Link href="/" prefetch className="hover:text-orange-400 transition">
               Home
             </Link>
-            <Link href="/Service" prefetch className="hover:text-orange-400 transition">
-              Services
-            </Link>
             <Link href="/tours" prefetch className="hover:text-orange-400 transition">
               Travel & Tours
+            </Link>
+            <Link href="/Service" prefetch className="hover:text-orange-400 transition">
+              Services
             </Link>
             <Link href="/blog" prefetch className="hover:text-orange-400 transition">
               Blogs
